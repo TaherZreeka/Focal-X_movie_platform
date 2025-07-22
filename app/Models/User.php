@@ -14,6 +14,7 @@ class User extends Authenticatable
 
   
     protected $fillable = [
+        'id',
         'name',
         'email',
         'password',
@@ -34,5 +35,9 @@ class User extends Authenticatable
             'password' => 'hashed',
             'role' => UserRole::class,
         ];
+    }
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }

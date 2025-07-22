@@ -1,4 +1,3 @@
-@extends('layouts.app')
 <!DOCTYPE html>
 <html>
 <head>
@@ -1283,3 +1282,4 @@
 <script src="dist/js/demo.js"></script>
 </body>
 </html>
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/welcome.blade.php ENDPATH**/ ?>
