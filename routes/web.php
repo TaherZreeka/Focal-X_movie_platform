@@ -18,15 +18,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
-    
+
       // عرض مشتركين
  Route::get('/users', [AdminController::class, 'users'])->name('admin.users.index');
-    
+
       // عرض مسؤلي المحتوى
  Route::get('/content-managers', [AdminController::class, 'contentManagers'])->name('admin.content.index');
-       //انشاء مستحدم او مسئول  
+       //انشاء مستحدم او مسئول
  Route::get('/users/create', [AdminController::class, 'createUser'])->name('admin.users.create');
-       //  تخزين المستحدم او المسئول
+       //  تخزين المستحدم او المسئولc
     Route::post('/users', [AdminController::class, 'storeUser'])->name('admin.users.store');
        // تعديل المستخدم او المسئول
     Route::get('/users/{id}/edit', [AdminController::class, 'editUser'])->name('admin.users.edit');
