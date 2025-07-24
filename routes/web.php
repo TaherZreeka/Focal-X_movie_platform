@@ -14,7 +14,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-<<<<<<< HEAD
 //Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
@@ -36,9 +35,8 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
         //  عرض تقارير الاعلى مشاهدة
     Route::get('/reports', [AdminController::class, 'reports'])->name('admin.reports');
 });
-=======
+
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('showtimes', App\Http\Controllers\ShowtimeController::class);
 });
->>>>>>> origin/nour

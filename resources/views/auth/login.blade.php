@@ -164,7 +164,5 @@
 </body>
 </html>
 
-<<<<<<< HEAD
 
 =======
->>>>>>> origin/nour
