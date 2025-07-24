@@ -7,11 +7,9 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
-class AdminSeeder extends Seeder
+class UserSeeder extends Seeder
 {
-    /**
-     * Store admin data in the database
-     */
+   
     public function run(): void
     {
         $admin = User::create([
@@ -19,6 +17,12 @@ class AdminSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('12345678'),
             'role' => UserRole::Admin->value,
+        ]);
+        $content_admin = User::create([
+            'name' => 'content_admin',
+            'email' => 'content_admin@gmail.com',
+            'password' => Hash::make('12345678'),
+            'role' => UserRole::Content->value,
         ]);
         
     }
