@@ -4,6 +4,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\{
+    MovieController,
+    ShowController,
+    ReviewController,
+    GenreController,
+};
 
 Route::get('/', function () {
     return redirect('/login');
@@ -34,6 +40,32 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::delete('/users/{id}', [AdminController::class, 'deleteUser'])->name('admin.users.delete');
         //  عرض تقارير الاعلى مشاهدة
     Route::get('/reports', [AdminController::class, 'reports'])->name('admin.reports');
+});
+
+
+Route::name('content-manager.')->prefix('content-manager')->middleware(['auth', 'role:content_manager|admin'])->group(function () {
+    
+    // لوحة التحكم
+    Route::get('/dashboard', function () {
+        return view('content-manager.dashboard');
+    })->name('dashboard');
+    
+    // الأفلام
+    Route::resource('movies', MovieController::class);
+    
+    
+    // التقييمات
+    Route::get('reviews', [ReviewController::class, 'index'])->name('reviews.index');
+    Route::post('reviews/{review}/reject', [ReviewController::class, 'reject'])->name('reviews.reject');
+    Route::delete('reviews/{review}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
+    
+    // الأنواع
+    Route::get('genres', [GenreController::class, 'index'])->name('genres.index');
+    Route::post('genres', [GenreController::class, 'store'])->name('genres.store');
+    Route::put('genres/{genre}', [GenreController::class, 'update'])->name('genres.update');
+    Route::delete('genres/{genre}', [GenreController::class, 'destroy'])->name('genres.destroy');
+    
+
 });
 
 
