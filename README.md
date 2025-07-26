@@ -9,3 +9,10 @@ Use the following credentials to log in as an admin:
 Email: admin@gmail.com  
 Password: 12345678
 //
+
+/Content Admin Access /
+
+Use the following credentials to log in as an content_admin:
+Email: content_admin@gmail.com  
+Password: 12345678
+//
