@@ -20,11 +20,8 @@ class Showtime extends Model
     protected function casts(): array
     {
         return [
-<<<<<<< HEAD
-=======
             'date' => 'date',
             'time' => 'datetime:H:i',
->>>>>>> origin/raghad
             'price' => 'decimal:2',
             'show_type' => ShowTypeEnum::class,
         ];

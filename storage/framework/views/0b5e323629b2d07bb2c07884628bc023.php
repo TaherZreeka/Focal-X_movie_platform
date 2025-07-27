@@ -4,4 +4,11 @@
         <div class="float-right d-none d-sm-inline-block">
            <b>Version</b> 3.0.0-rc.1
         </div>
-</footer><?php /**PATH C:\xampp\htdocs\focal x\Focal_X-Graduation-Project\Movie_Platform_Management_System\resources\views/content_admin/layout/footer.blade.php ENDPATH**/ ?>
+<<<<<<< HEAD
+</footer>
+
+
+=======
+</footer>
+>>>>>>> origin/raghad
+<?php /**PATH C:\xampp\htdocs\focal x\Focal_X-Graduation-Project\Movie_Platform_Management_System\resources\views/content_admin/layout/footer.blade.php ENDPATH**/ ?>

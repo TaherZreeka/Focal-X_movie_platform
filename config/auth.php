@@ -46,19 +46,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-<<<<<<< HEAD
         'api' => [
             'driver' => 'sanctum',
             'provider' => 'users',
          ],
-=======
 
         'api' => [
             'driver' => 'sanctum',
             'provider' => 'users',
             'hash' => false,
         ],
->>>>>>> origin/raghad
     ],
 
     /*

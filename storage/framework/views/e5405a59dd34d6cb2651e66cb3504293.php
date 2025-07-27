@@ -50,6 +50,8 @@
                       <p>ShowTime Add</p>
                     </a>
                   </li>
+<<<<<<< HEAD
+=======
                   <li class="nav-item">
                     <a href="pages/examples/project_edit.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
@@ -63,6 +65,7 @@
                     </a>
                   </li>
              
+>>>>>>> origin/raghad
                 </ul>
               </li>
               <li class="nav-item has-treeview">
@@ -85,6 +88,11 @@
                       <i class="far fa-circle nav-icon"></i>
                       <p>Movie Add</p>
                     </a>
+<<<<<<< HEAD
+                  </li> 
+                </ul>
+              </li>
+=======
                   </li>
                 
                
@@ -92,6 +100,7 @@
               </li>
 
               
+>>>>>>> origin/raghad
             </ul>
           </nav>
           <!-- /.sidebar-menu -->
