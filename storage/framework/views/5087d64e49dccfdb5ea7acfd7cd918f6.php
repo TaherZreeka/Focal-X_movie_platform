@@ -31,37 +31,39 @@
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ms-auto">
             <!-- Authentication Links -->
-            @guest
-                @if (Route::has('login'))
+            <?php if(auth()->guard()->guest()): ?>
+                <?php if(Route::has('login')): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo e(__('Login')); ?></a>
                     </li>
-                @endif
+                <?php endif; ?>
 
-                @if (Route::has('register'))
+                <?php if(Route::has('register')): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link" href="<?php echo e(route('register')); ?>"><?php echo e(__('Register')); ?></a>
                     </li>
-                @endif
-            @else
+                <?php endif; ?>
+            <?php else: ?>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
+                        <?php echo e(Auth::user()->name); ?>
+
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                             onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                            <?php echo e(__('Logout')); ?>
+
                         </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
+                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" class="d-none">
+                            <?php echo csrf_field(); ?>
                         </form>
                     </div>
                 </li>
-            @endguest
+            <?php endif; ?>
         </ul>
         
         <!-- Messages Dropdown Menu -->
@@ -156,4 +158,4 @@
         </li>
       </ul>
   </nav>
-  <!-- /.navbar -->
+  <!-- /.navbar --><?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/content_admin/layout/navbar.blade.php ENDPATH**/ ?>

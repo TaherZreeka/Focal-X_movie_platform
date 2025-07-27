@@ -1,8 +1,8 @@
-@extends('content_admin.layout.master')
 
-@section('title', 'Add Showtime')
 
-@section('content')
+<?php $__env->startSection('title', 'Add Showtime'); ?>
+
+<?php $__env->startSection('content'); ?>
 
 <div class="content-wrapper" dir="ltr">
   <section class="content-header">
@@ -22,8 +22,8 @@
   </section>
 
   <section class="content">
-    <form action="{{ route('showtimes.store') }}" method="POST">
-      @csrf
+    <form action="<?php echo e(route('showtimes.store')); ?>" method="POST">
+      <?php echo csrf_field(); ?>
       <div class="row">
         <div class="col-md-6">
           <div class="card card-primary">
@@ -42,24 +42,24 @@
               </div>
               <div class="form-group">
                 <label for="time">Time</label>
-                <input type="time" id="time" name="time" class="form-control" value="{{ old('time') }}" required>
+                <input type="time" id="time" name="time" class="form-control" value="<?php echo e(old('time')); ?>" required>
               </div>
               <div class="form-group">
                 <label for="hall">Hall</label>
-                <input type="text" id="hall" name="hall" class="form-control" value="{{ old('hall') }}" required>
+                <input type="text" id="hall" name="hall" class="form-control" value="<?php echo e(old('hall')); ?>" required>
               </div>
               <div class="form-group">
                 <label for="price">Price</label>
-                <input type="number" step="0.01" id="price" name="price" class="form-control" value="{{ old('price') }}" required>
+                <input type="number" step="0.01" id="price" name="price" class="form-control" value="<?php echo e(old('price')); ?>" required>
               </div>
               <div class="form-group">
                 <label for="show_type">Showtime Type</label>
                 <select id="show_type" name="show_type" class="form-control custom-select" required>
                   <option selected disabled>Select one</option>
-                  <option value="morning" {{ old('show_type') == 'morning' ? 'selected' : '' }}>Morning</option>
-                  <option value="evening" {{ old('show_type') == 'evening' ? 'selected' : '' }}>Evening</option>
-                  <option value="weekend" {{ old('show_type') == 'weekend' ? 'selected' : '' }}>Weekend</option>
-                  <option value="vip" {{ old('show_type') == 'vip' ? 'selected' : '' }}>VIP</option>
+                  <option value="morning" <?php echo e(old('show_type') == 'morning' ? 'selected' : ''); ?>>Morning</option>
+                  <option value="evening" <?php echo e(old('show_type') == 'evening' ? 'selected' : ''); ?>>Evening</option>
+                  <option value="weekend" <?php echo e(old('show_type') == 'weekend' ? 'selected' : ''); ?>>Weekend</option>
+                  <option value="vip" <?php echo e(old('show_type') == 'vip' ? 'selected' : ''); ?>>VIP</option>
                 </select>
               </div>
             </div>
@@ -81,11 +81,12 @@
                 <label for="movie_id">Movie</label>
                 <select id="movie_id" name="movie_id" class="form-control" required>
                   <option selected disabled>Select a movie</option>
-                  @foreach($movies as $movie)
-                    <option value="{{ $movie->id }}" {{ old('movie_id') == $movie->id ? 'selected' : '' }}>
-                      {{ $movie->title }}
+                  <?php $__currentLoopData = $movies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $movie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option value="<?php echo e($movie->id); ?>" <?php echo e(old('movie_id') == $movie->id ? 'selected' : ''); ?>>
+                      <?php echo e($movie->title); ?>
+
                     </option>
-                  @endforeach
+                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </select>
               </div>
             </div>
@@ -96,7 +97,7 @@
       <!-- Buttons -->
       <div class="row">
         <div class="col-12">
-          <a href="{{ route('showtimes.index') }}" class="btn btn-secondary">Cancel</a>
+          <a href="<?php echo e(route('showtimes.index')); ?>" class="btn btn-secondary">Cancel</a>
           <button type="submit" class="btn btn-success float-right">Create Showtime</button>
         </div>
       </div>
@@ -104,4 +105,6 @@
   </section>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('content_admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/content_admin/show_time/create.blade.php ENDPATH**/ ?>

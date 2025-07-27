@@ -4,6 +4,4 @@
         <div class="float-right d-none d-sm-inline-block">
            <b>Version</b> 3.0.0-rc.1
         </div>
-</footer>
-
-
+</footer><?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/admin/layout/footer.blade.php ENDPATH**/ ?>

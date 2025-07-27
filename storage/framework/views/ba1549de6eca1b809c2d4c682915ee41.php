@@ -7,3 +7,4 @@
 </footer>
 
 
+<?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/content_admin/layout/footer.blade.php ENDPATH**/ ?>

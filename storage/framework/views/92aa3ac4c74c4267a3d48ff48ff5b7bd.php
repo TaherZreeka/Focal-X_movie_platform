@@ -80,4 +80,4 @@
           <!-- /.sidebar-menu -->
         </div>
         <!-- /.sidebar -->
-      </aside>
+      </aside><?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/content_admin/layout/sidebar.blade.php ENDPATH**/ ?>
