@@ -50,19 +50,6 @@
                       <p>ShowTime Add</p>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/project_edit.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>ShowTimes Edit</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/project_detail.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>ShowTimes Detail</p>
-                    </a>
-                  </li>
-             
                 </ul>
               </li>
               <li class="nav-item has-treeview">
@@ -85,13 +72,9 @@
                       <i class="far fa-circle nav-icon"></i>
                       <p>Movie Add</p>
                     </a>
-                  </li>
-                
-               
+                  </li> 
                 </ul>
               </li>
-
-              
             </ul>
           </nav>
           <!-- /.sidebar-menu -->
