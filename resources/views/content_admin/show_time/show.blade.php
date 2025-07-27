@@ -3,6 +3,7 @@
 @section('title', 'Showtimes Management')
 
 @section('content')
+<<<<<<< HEAD
  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -38,6 +39,19 @@
           </div>
         </div>
          <div class="card-body">
+=======
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">current Showtime</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+>>>>>>> origin/raghad
               <div class="container-fluid">
                 <table class="table table-bordered table-striped">
                       <thead>
@@ -71,10 +85,15 @@
 
         </div>
         <!-- /.card-body -->
+<<<<<<< HEAD
        
       </div>
       <!-- /.card -->
 
+=======
+      </div>
+      <!-- /.card -->
+>>>>>>> origin/raghad
     </section>
     <!-- /.content -->
   </div>

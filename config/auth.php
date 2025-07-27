@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 return [
 
     /*
@@ -34,16 +37,28 @@ return [
     | Supported: "session"
     |
     */
-
+    'defaults' => [
+        'guard' => 'web',
+        'passwords' => 'users',
+    ],
     'guards' => [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
+<<<<<<< HEAD
         'api' => [
             'driver' => 'sanctum',
             'provider' => 'users',
          ],
+=======
+
+        'api' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+            'hash' => false,
+        ],
+>>>>>>> origin/raghad
     ],
 
     /*
