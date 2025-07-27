@@ -1,14 +1,10 @@
 @extends('content_admin.layout.master')
-<<<<<<< HEAD
 
-=======
  
->>>>>>> origin/raghad
 @section('title', 'Showtimes Management')
 
 @section('content')
 
-<<<<<<< HEAD
 <div class="content-wrapper" dir="ltr">
   <section class="content-header">
     <div class="container-fluid">
@@ -93,8 +89,7 @@
   </section>
 </div>
 
-@endsection
-=======
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->
@@ -168,4 +163,4 @@
     
 @endsection
 
->>>>>>> origin/raghad
+

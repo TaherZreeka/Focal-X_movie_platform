@@ -3,7 +3,7 @@
 @section('title', 'Edit Showtime')
 
 @section('content')
-<<<<<<< HEAD
+
 <div class="content-wrapper">
   <!-- Header -->
   <section class="content-header">
@@ -111,7 +111,6 @@
       </div>
     </form>
   </section>
-=======
 <div class="card mt-5 text-start" dir="ltr">
     <h2 class="card-header">Edit Showtime</h2>
     <div class="card-body">
@@ -165,6 +164,5 @@
             <button type="submit" class="btn btn-success"><i class="fa-solid fa-check"></i> Update Showtime</button>
         </form>
     </div>
->>>>>>> origin/raghad
 </div>
 @endsection
