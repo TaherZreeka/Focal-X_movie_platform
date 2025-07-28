@@ -1,4 +1,3 @@
-@extends('layouts.app')
 <!DOCTYPE html>
 <html>
 <head>
@@ -1283,3 +1282,4 @@
 <script src="dist/js/demo.js"></script>
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/admin.blade.php ENDPATH**/ ?>

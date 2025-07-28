@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 return [
 
     /*
@@ -34,7 +37,10 @@ return [
     | Supported: "session"
     |
     */
-
+    'defaults' => [
+        'guard' => 'web',
+        'passwords' => 'users',
+    ],
     'guards' => [
         'web' => [
             'driver' => 'session',
@@ -44,6 +50,12 @@ return [
             'driver' => 'sanctum',
             'provider' => 'users',
          ],
+
+        'api' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+            'hash' => false,
+        ],
     ],
 
     /*

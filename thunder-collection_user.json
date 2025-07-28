@@ -1,0 +1,133 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "user",
+    "collectionId": "5608ac2d-ec9d-4a80-b320-f8f84779966c",
+    "dateExported": "2025-07-25T20:35:02.454Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "57138c5d-4d30-4568-a3a2-e0beeeb5f554",
+            "colId": "5608ac2d-ec9d-4a80-b320-f8f84779966c",
+            "containerId": "",
+            "name": "http://127.0.0.1:8000/api/register?name=mohamed&email=mog@gmail.com&password=00000000",
+            "url": "http://127.0.0.1:8000/api/register?name=mohamed&email=mog@gmail.com&password=00000000&password_confirmation=00000000",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-07-21T11:55:17.546Z",
+            "modified": "2025-07-21T11:55:17.546Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "name",
+                    "value": "mohamed",
+                    "isPath": false
+                },
+                {
+                    "name": "email",
+                    "value": "mog@gmail.com",
+                    "isPath": false
+                },
+                {
+                    "name": "password",
+                    "value": "00000000",
+                    "isPath": false
+                },
+                {
+                    "name": "password_confirmation",
+                    "value": "00000000",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "77b57141-53a0-4a9d-9811-124379acdf42",
+            "colId": "5608ac2d-ec9d-4a80-b320-f8f84779966c",
+            "containerId": "",
+            "name": "http://127.0.0.1:8000/api/login?email=mog@gmail.com&password=00000000",
+            "url": "http://127.0.0.1:8000/api/login?email=ahmad@gmail.com&password=00000000",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-07-23T17:52:42.023Z",
+            "modified": "2025-07-23T17:52:42.023Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "email",
+                    "value": "ahmad@gmail.com",
+                    "isPath": false
+                },
+                {
+                    "name": "password",
+                    "value": "00000000",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "3b14ae08-4f82-4884-bb72-56f626afd42d",
+            "colId": "5608ac2d-ec9d-4a80-b320-f8f84779966c",
+            "containerId": "",
+            "name": "http://127.0.0.1:8000/api/movies/1/reviews?rating=5&comment=good",
+            "url": "http://127.0.0.1:8000/api/movies/1/reviews",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-07-25T20:32:10.325Z",
+            "modified": "2025-07-25T20:32:10.325Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"rating\": 4,\n  \"comment\": \"good\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "12|oLYtcDuQSSu4I9KcdUCIRdLlLDsiQKAUaUM2eIwL7dc69259"
+            }
+        },
+        {
+            "_id": "d036f17d-b8dd-4990-a327-e164063615f9",
+            "colId": "5608ac2d-ec9d-4a80-b320-f8f84779966c",
+            "containerId": "",
+            "name": "http://127.0.0.1:8000/api/logout",
+            "url": "http://127.0.0.1:8000/api/logout",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2025-07-25T20:32:26.163Z",
+            "modified": "2025-07-25T20:32:26.163Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "2|l0Ii015jshwDMvKSBkYVDVazmyb0NyAxC3FZ7WHSa10e71a7"
+            }
+        },
+        {
+            "_id": "a9406727-1217-47d5-9b90-53a3270267fb",
+            "colId": "5608ac2d-ec9d-4a80-b320-f8f84779966c",
+            "containerId": "",
+            "name": "http://127.0.0.1:8000/api/movie/",
+            "url": "http://127.0.0.1:8000/api/movies",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2025-07-25T20:32:44.496Z",
+            "modified": "2025-07-25T20:32:44.496Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                }
+            ]
+        }
+    ],
+    "ref": "TXNcFLRfzyinqg9vzSNkJWtdtDdFnRrYZw9OvRgL03KalOwqgTBJ_HKniPtlJx-qwa-YgahrMw6yOgg0kSC5Rg"
+}
