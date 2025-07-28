@@ -9,7 +9,11 @@ class ReviewController extends Controller
 {public function index()
     {
         $reviews = Review::with('movie', 'user')->paginate(10);
-        return view('content-manager.reviews.index', compact('reviews'));
+        return view('content_admin.reviews.index', compact('reviews'));
+    }
+    public function approve(Review $review){
+        $review->update(['approved'=>true]);
+        return back()->with('success','تمت الموافقة على التقيم');
     }
 
 
@@ -23,7 +27,7 @@ class ReviewController extends Controller
     public function destroy(Review $review)
     {
         $review->delete();
-        return redirect()->route('content-manager.reviews.index')
+        return redirect()->route('content_admin.reviews.index')
             ->with('success', 'تم حذف التقييم بنجاح');
     }
 }

@@ -24,7 +24,7 @@ class ReviewRequeat extends FormRequest
         return [
             'rating' => 'required|integer|min:1|max:5',
             'comment' => 'nullable|string|max:500',
-            
+            'approved'=> 'sometime|boolean'
         
         ];
     }

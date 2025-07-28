@@ -17,7 +17,7 @@ class MovieController extends Controller
     public function index()
     {
         $movies= Movie::with('genres')->paginate(5);
-        return view('content-manager.movies.index',compact('genres'));
+        return view('content_admin.movies.index',compact('genres'));
     }
 
     /**
@@ -26,7 +26,7 @@ class MovieController extends Controller
     public function create()
     {
     $genres = Genre::all();
-    return view('content-manager.movies.create',compact('genres'));
+    return view('content_admin.movies.create',compact('genres'));
     }
 
     /**
@@ -48,7 +48,7 @@ class MovieController extends Controller
 
         ]);
         $movie->genres()->attach($request->genres);
-        return redirect()->route('content-manager.movies.index')->with('success','add the movie successfule');
+        return redirect()->route('content_admin.movies.index')->with('success','add the movie successfule');
     }
 
     /**
@@ -57,7 +57,7 @@ class MovieController extends Controller
     public function show(string $id,Movie $movie)
     {
       $movie->load('genres','shows','reviews');
-      return view('content-manager.movies.show',compact('movie'));
+      return view('content_admin.movies.show',compact('movie'));
     }
 
     /**
@@ -67,7 +67,7 @@ class MovieController extends Controller
     {
     $genres = Genre::all();
     $selectGenres = $movie->genre->pluck('id')->toArray();
-    return view('content-manager.movies.edit', compact('movie'.'genres','selectGenres'));
+    return view('content_adminr.movies.edit', compact('movie'.'genres','selectGenres'));
     }
 
     /**
@@ -84,7 +84,7 @@ class MovieController extends Controller
         $movie->update($data);
         $movie->genres()->sync($request->genres);
 
-        return redirect()->route('content-manager.movies.index')
+        return redirect()->route('content_admin.movies.index')
             ->with('success', 'تم تحديث الفيلم بنجاح');
     }
 
@@ -101,7 +101,7 @@ class MovieController extends Controller
         $movie->reviews()->delete();
         $movie->delete();
 
-        return redirect()->route('content-manager.movies.index')
+        return redirect()->route('content_admin.movies.index')
             ->with('success', 'تم حذف الفيلم بنجاح');
     }
 }

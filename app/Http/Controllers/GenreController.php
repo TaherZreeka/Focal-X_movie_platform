@@ -10,7 +10,7 @@ class GenreController extends Controller
 {public function index()
     {
         $genres = Genre::paginate(10);
-        return view('content-manager.genres.index', compact('genres'));
+        return view('content_admin.genres.index', compact('genres'));
     }
 
     public function store(GenreRequeat $request)

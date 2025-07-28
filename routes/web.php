@@ -43,11 +43,11 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 });
 
 
-Route::name('content-manager.')->prefix('content-manager')->middleware(['auth', 'role:content_manager|admin'])->group(function () {
+Route::name('content-manager.')->prefix('content_admin')->middleware(['auth', 'role:content_admin|admin'])->group(function () {
     
     // لوحة التحكم
     Route::get('/dashboard', function () {
-        return view('content-manager.dashboard');
+        return view('content_admin.dashboard');
     })->name('dashboard');
     
     // الأفلام
@@ -58,6 +58,7 @@ Route::name('content-manager.')->prefix('content-manager')->middleware(['auth', 
     Route::get('reviews', [ReviewController::class, 'index'])->name('reviews.index');
     Route::post('reviews/{review}/reject', [ReviewController::class, 'reject'])->name('reviews.reject');
     Route::delete('reviews/{review}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
+    Route::post('reviews/{review}/approve', [ReviewController::class, 'approve'])->name('reviews.approve');
     
     // الأنواع
     Route::get('genres', [GenreController::class, 'index'])->name('genres.index');
