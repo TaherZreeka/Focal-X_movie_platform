@@ -1,4 +1,3 @@
-
  
 <?php $__env->startSection('title', 'Showtimes Management'); ?>
 
@@ -38,6 +37,17 @@
           </div>
         </div>
          <div class="card-body">
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">current Showtime</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
               <div class="container-fluid">
                 <table class="table table-bordered table-striped">
                       <thead>
@@ -75,6 +85,8 @@
       </div>
       <!-- /.card -->
 
+      </div>
+      <!-- /.card -->
     </section>
     <!-- /.content -->
   </div>

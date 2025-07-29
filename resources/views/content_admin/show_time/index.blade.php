@@ -1,5 +1,6 @@
 @extends('content_admin.layout.master')
 
+ 
 @section('title', 'Showtimes Management')
 
 @section('content')
@@ -88,4 +89,9 @@
   </section>
 </div>
 
+
+  
+    
 @endsection
+
+

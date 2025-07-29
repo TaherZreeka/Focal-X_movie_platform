@@ -3,6 +3,7 @@
 @section('title', 'Edit Showtime')
 
 @section('content')
+
 <div class="content-wrapper">
   <!-- Header -->
   <section class="content-header">
@@ -110,5 +111,5 @@
       </div>
     </form>
   </section>
-</div>
+  </div>
 @endsection
