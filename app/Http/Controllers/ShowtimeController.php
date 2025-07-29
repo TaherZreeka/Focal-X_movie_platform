@@ -24,7 +24,7 @@ class ShowtimeController extends Controller
      */
     public function create()
     {
-         $movies = Movie::all(); 
+         $movies = Movie::all();
          return view('content_admin.show_time.create', compact('movies'));
     }
 
@@ -70,7 +70,21 @@ class ShowtimeController extends Controller
     public function destroy(Showtime $showtime)
     {
         $showtime->delete();
-        return redirect()->back()->with('success', 'Showtime deleted successfully.');
+        return redirect()->route('showtimes.index')->with('success', 'Showtime deleted successfully.');
+    }
+     public function trash(){
+        $showtimes = Showtime::onlyTrashed()->latest('deleted_at')->paginate(10);
+         return view('content_admin.show_time.trash' ,compact('showtimes'));
+    }
+    public function restore($id ){
+         $showtime=Showtime::onlyTrashed()->find($id)->restore();
+          return redirect()->back();
+        //   return redirect()->route('showtimes.index');
+    }
+    public function forcedelete($id ){
+          $showtime=Showtime::onlyTrashed()->find($id)->forcedelete();
+          return redirect()->back();
+        //   return redirect()->route('showtimes.index');
     }
 
 

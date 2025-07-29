@@ -8,16 +8,11 @@
   <div class="content-wrapper">
     <!-- Main content -->
     <section class="content">
-        <div class="flex py-3">
-        <a href="{{ route('showtimes.trash') }}" class="btn btn-danger mb-3"><i class="fas fa-trash"></i>  trashed Movies</a>
-         <a href="{{ route('showtimes.create') }}" class="btn btn-danger mb-3" data-toggle="tooltip" data-original-title="Edit movie">
-                      <i class="fa-solid fa-plus"></i>    create
-                        </a>
-        </div>
+       <a href="{{ route('showtimes.index') }}" class="btn btn-danger mb-3"><i class="fas fa-trash"></i>All Users</a>
       <div class="card">
        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex justify-content-center align-items-center" style="height: 100px;">
-                <h6 class="text-white text-capitalize m-0"style="font-size: 32px;">Show Time List</h6>
+                <h6 class="text-white text-capitalize m-0"style="font-size: 32px;">All Showtime</h6>
               </div>
             </div>
         <!-- /.card-header -->
@@ -33,7 +28,9 @@
                               <th>Hall</th>
                               <th>Price</th>
                               <th>Show Type</th>
+                              <th >Deleted At</th>
                               <th >Actions</th>
+
                           </tr>
                       </thead>
 
@@ -48,21 +45,21 @@
                                   <td>{{ $showtime->hall }}</td>
                                   <td>{{ $showtime->price }}</td>
                                   <td>{{ $showtime->show_type }}</td>
-                                  <td class="text-center">
-                                <form action="{{ route('showtimes.destroy', $showtime->id) }}" method="POST" class="d-inline">
-                                    <a class="btn btn-info btn-sm" href="{{ route('showtimes.show', $showtime->id) }}" title="Show">
-                                        <i class="fa-solid fa-list"></i>
-                                    </a>
-                                    <a class="btn btn-primary btn-sm" href="{{ route('showtimes.edit', $showtime->id) }}" title="Edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete"
-                                        onclick="return confirm('Are you sure you want to delete this showtime?')">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </form>
+                                <td class="align-middle text-center">
+                               <span class="text-secondary text-xs font-weight-bold">{{ $showtime->deleted_at }}</span>
+                              </td>
+                              <td class="align-middle">
+                              <a class="btn btn-sm btn-primary" href="{{ route('showtimes.restore' ,$showtime) }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                              <i class="fa-solid fa-rotate-left" style="font-size: 15px;"></i>
+                              </a>
+
+
+                          <form action="{{ route('showtimes.forcedelete', $showtime) }}" method="POST" style="display:inline;">
+                           @csrf
+                            @method('DELETE')
+                           <button class="btn btn-sm btn-primary"   type="submit" class="text-secondary font-weight-bold text-xs" ><i class="fa-solid fa-trash fa-lg"style="font-size: 15px;"></i></button>
+                              </form>
+
                             </td>
                               </tr>
                           @empty

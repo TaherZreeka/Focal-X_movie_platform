@@ -16,9 +16,9 @@ Route::post('logout',[AuthController::class,"logout"])->middleware('auth:sanctum
 
 
 Route::middleware('auth:sanctum')->group(function () {
-Route::post('/movies/{movieId}/reviews', [ReviewController::class, 'store']);
-Route::put('/movies/{movieId}/reviews/{reviewId}', [ReviewController::class, 'update']);
-Route::delete('/movies/{movieId}/reviews/{reviewId}', [ReviewController::class, 'destroy']);
+    Route::post('/movies/{movie}/reviews', [ReviewController::class, 'store']);
+    Route::put('/movies/{movie}/reviews/{reviewId}', [ReviewController::class, 'update']);
+    Route::delete('/movies/{movie}/reviews/{reviewId}', [ReviewController::class, 'destroy']);
 });
 
 Route::get('/movies/{movieId}/reviews', [ReviewController::class, 'index']);

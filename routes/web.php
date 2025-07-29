@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShowtimeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\AdminController;
+
+
 
 Route::get('/', function () {
     return redirect('/login');
@@ -14,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
@@ -36,7 +40,9 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/reports', [AdminController::class, 'reports'])->name('admin.reports');
 });
 
-
+Route::get('/showtimes/trash', [ShowtimeController::class, 'trash'])->name('showtimes.trash');
+Route::get('/showtimes/{showtime}/restore', [ShowtimeController::class, 'restore'])->name('showtimes.restore');
+Route::delete('/showtimes/{showtime}/forcedelete', [ShowtimeController::class, 'forcedelete'])->name('showtimes.forcedelete');
 Route::middleware(['auth'])->group(function () {
     Route::resource('showtimes', App\Http\Controllers\ShowtimeController::class);
 });

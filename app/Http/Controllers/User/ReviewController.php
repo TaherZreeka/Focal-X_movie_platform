@@ -16,8 +16,8 @@ class ReviewController extends Controller
     }
     public function index($movieId)
     {
-        $reviews = Review::where('movie_id', $movieId)->paginate(20);
-
+        $reviews = Review::where('movie_id', $movieId)->paginate(10); // 10 تعليقات لكل صفحة
+        return response()->json($reviews);
         return response()->json([
             'status' => 'success',
             'data' => $reviews
@@ -37,24 +37,26 @@ class ReviewController extends Controller
 
     // إضافة تقييم جديد
     public function store(Request $request, Movie $movie)
-    {
+    {dd(Review::where('movie_id', $movie)->first());
+       if (!Auth::check()) {
+        return response()->json(['message' => 'Unauthorized'], 401);
+    }
 
+    $data = $request->validate([
+        'rating' => 'required|integer|min:1|max:5',
+        'comment' => 'nullable|string',
+    ]);
 
-        $data = $request->validate([
-            'rating' => 'required|integer|min:1|max:5',
-            'comment' => 'nullable|string',
-        ]);
+    $review = $movie->reviews()->create([
+        'user_id' => Auth::id(),
+        'rating' => $data['rating'],
+        'comment' => $data['comment'] ?? null,
+    ]);
 
-        $review = $movie->reviews()->create([
-            'user_id' => Auth::id(),
-            'rating' => $data['rating'],
-            'comment' => $data['comment'],
-        ]);
-        dd($request);
-        return response()->json([
-            'message' => 'تم إضافة التقييم بنجاح',
-            'review' => $review
-        ], 201);
+    return response()->json([
+        'message' => 'تم إضافة التقييم بنجاح',
+        'review' => $review
+    ], 201);
     }
     // تحديث تقييم موجود
     public function update(Request $request, Movie $movie, Review $review)
@@ -79,7 +81,7 @@ class ReviewController extends Controller
         ]);
     }
 
-    // حذف تقييم
+    //حذف تقييم
     public function destroy(Request $request, Movie $movie, Review $review)
     {
         if ($review->user_id !== $request->user()->id) {
