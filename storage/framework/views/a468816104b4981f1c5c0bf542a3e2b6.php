@@ -1,4 +1,5 @@
  
+ 
 <?php $__env->startSection('title', 'Showtimes Management'); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -91,6 +92,8 @@
   
     
 <?php $__env->stopSection(); ?>
+
+
 
 
 

@@ -1,8 +1,7 @@
-
-
 <?php $__env->startSection('title', 'Edit Showtime'); ?>
 
 <?php $__env->startSection('content'); ?>
+
 <div class="content-wrapper">
   <!-- Header -->
   <section class="content-header">

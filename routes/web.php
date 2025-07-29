@@ -4,16 +4,19 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShowtimeController;
 
 Route::get('/', function () {
     return redirect('/login');
 });
-
-
-
 Auth::routes();
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::resource('showtimes', ShowtimeController::class);
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 //Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
@@ -36,7 +39,3 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/reports', [AdminController::class, 'reports'])->name('admin.reports');
 });
 
-
-Route::middleware(['auth'])->group(function () {
-    Route::resource('showtimes', App\Http\Controllers\ShowtimeController::class);
-});

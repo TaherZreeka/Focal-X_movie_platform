@@ -17,10 +17,9 @@ class ContentAdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-       if (Auth::check() && Auth::user()->role === UserRole::Content->value) {
-            return $next($request);
+       if (Auth::user()->role !== UserRole::Content->value) {
+            abort(403, 'Unauthorized action (ContentAdmin only).');
         }
-
-        abort(403, 'unauthenticated action (ContentAdmin only).');
+            return $next($request);
     }
 }

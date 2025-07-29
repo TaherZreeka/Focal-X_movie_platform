@@ -16,6 +16,6 @@ Password: 12345678
 
 /ContentAdmin Access /
 Use the following credentials to log in as an content_admin:
-Email: content_admin@gmail.com  
+Email: content_admin@gmail.com
 Password: 12345678
 //

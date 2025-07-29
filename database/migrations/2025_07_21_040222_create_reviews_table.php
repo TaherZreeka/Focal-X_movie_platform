@@ -17,10 +17,6 @@ return new class extends Migration
              $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('movie_id')->constrained()->onDelete('cascade');
             $table->unsignedTinyInteger('rating');
-
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('movie_id')->constrained()->onDelete('cascade');
-            $table->unsignedTinyInteger('rating');
             $table->text('comment')->nullable();
             $table->timestamps();
         });
