@@ -1,4 +1,3 @@
-
 {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -154,4 +153,12 @@
     <!-- /.login-card-body -->
   </div>
 </div>
-@endsection
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

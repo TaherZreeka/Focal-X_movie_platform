@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>إضافة مستخدم</title>
+    <title>إضافة مسئول محتوى </title>
     <style>
         body {
             font-family: 'Tahoma', sans-serif;
@@ -56,10 +56,10 @@
 </head>
 <body>
     <div class="container">
-        <h2>إضافة مستخدم جديد</h2>
+        <h2>إضافة مسؤول محتوى</h2>
 
-        <form action="{{ route('admin.users.store') }}" method="POST">
-            @csrf
+        <form action="<?php echo e(route('admin.content.store')); ?>" method="POST">
+            <?php echo csrf_field(); ?>
 
             <label>الاسم:</label>
             <input type="text" name="name" required>
@@ -81,4 +81,4 @@
         </form>
     </div>
 </body>
-</html>
+</html><?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/admin/content/create.blade.php ENDPATH**/ ?>

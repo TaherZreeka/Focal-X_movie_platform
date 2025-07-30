@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>قائمة المستخدمين</title>
+    <title>قائمة مسئولي المحتوى</title>
     <style>
         body {
             font-family: 'Cairo', sans-serif;
@@ -70,10 +70,13 @@
 </head>
 <body>
 <div class="container">
-    <h2>قائمة المشتركين</h2>
+    <h2>قائمة مسؤولي المحتوى</h2>
 
-    <a href="{{ route('admin.users.create') }}" class="add-btn">➕ إضافة مستخدم</a>
+    <a href="{{ route('admin.content.create') }}" class="add-btn"> إضافة مسئول محتوى</a>
 
+    @if($contentManagers->isEmpty())
+        <p>لا يوجد مسؤولو محتوى حالياً.</p>
+    @else
     <table>
         <thead>
             <tr>
@@ -84,15 +87,14 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($users as $index => $user)
+            @foreach($contentManagers as $index => $user)
             <tr>
                 <td>{{ $index + 1 }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>
-                    <a href="{{ route('admin.users.edit', $user->id) }}" class="edit-link">تعديل</a> |
-                    <a href="{{ route('admin.users.show', $user->id) }}" class="edit-link">عرض</a> |
-                    <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="inline" onsubmit="return confirm('هل أنت متأكد؟')">
+                    <a href="{{ route('admin.content.edit', $user->id) }}" class="edit-link">تعديل</a> |
+                    <form action="{{ route('admin.content.destroy', $user->id) }}" method="POST" class="inline" onsubmit="return confirm('هل أنت متأكد من الحذف؟')">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="delete-btn">حذف</button>
@@ -102,6 +104,7 @@
             @endforeach
         </tbody>
     </table>
+    @endif
 </div>
 </body>
 </html>

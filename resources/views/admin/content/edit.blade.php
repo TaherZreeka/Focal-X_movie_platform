@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>تعديل المستخدم</title>
+    <title>تعديل مسئول المحتوى</title>
     <style>
         body {
             font-family: 'Cairo', sans-serif;
@@ -54,9 +54,9 @@
 </head>
 <body>
 <div class="container">
-    <h2>تعديل المستخدم</h2>
+    <h2>تعديل مسئول المحتوى</h2>
 
-    <form action="{{ route('admin.users.update', $user->id) }}" method="POST">
+    <form action="{{ route('admin.content.update', $user->id) }}" method="POST">
     @csrf
     @method('PUT')
 

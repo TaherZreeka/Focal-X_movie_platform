@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>إضافة مستخدم</title>
+    <title>إضافة مسئول محتوى </title>
     <style>
         body {
             font-family: 'Tahoma', sans-serif;
@@ -56,9 +56,9 @@
 </head>
 <body>
     <div class="container">
-        <h2>إضافة مستخدم جديد</h2>
+        <h2>إضافة مسؤول محتوى</h2>
 
-        <form action="{{ route('admin.users.store') }}" method="POST">
+        <form action="{{ route('admin.content.store') }}" method="POST">
             @csrf
 
             <label>الاسم:</label>

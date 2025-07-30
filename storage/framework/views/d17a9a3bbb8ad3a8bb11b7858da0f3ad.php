@@ -58,8 +58,8 @@
     <div class="container">
         <h2>إضافة مستخدم جديد</h2>
 
-        <form action="{{ route('admin.users.store') }}" method="POST">
-            @csrf
+        <form action="<?php echo e(route('admin.users.store')); ?>" method="POST">
+            <?php echo csrf_field(); ?>
 
             <label>الاسم:</label>
             <input type="text" name="name" required>
@@ -82,3 +82,4 @@
     </div>
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/admin/users/create.blade.php ENDPATH**/ ?>

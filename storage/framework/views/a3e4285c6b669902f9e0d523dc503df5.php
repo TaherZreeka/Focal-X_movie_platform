@@ -56,15 +56,15 @@
 <div class="container">
     <h2>تعديل المستخدم</h2>
 
-    <form action="{{ route('admin.users.update', $user->id) }}" method="POST">
-    @csrf
-    @method('PUT')
+    <form action="<?php echo e(route('admin.users.update', $user->id)); ?>" method="POST">
+    <?php echo csrf_field(); ?>
+    <?php echo method_field('PUT'); ?>
 
     <div class="mb-4">
         <label>الدور:</label>
         <select name="role" class="w-full border p-2" required>
-            <option value="user" @if($user->role == 'user') selected @endif>مشترك</option>
-            <option value="content" @if($user->role == 'content') selected @endif>مسؤول محتوى</option>
+            <option value="user" <?php if($user->role == 'user'): ?> selected <?php endif; ?>>مشترك</option>
+            <option value="content" <?php if($user->role == 'content'): ?> selected <?php endif; ?>>مسؤول محتوى</option>
         </select>
     </div>
 
@@ -74,3 +74,4 @@
 </div>
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/admin/users/edit.blade.php ENDPATH**/ ?>

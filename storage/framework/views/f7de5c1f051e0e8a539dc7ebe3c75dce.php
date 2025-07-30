@@ -72,7 +72,7 @@
 <div class="container">
     <h2>قائمة المشتركين</h2>
 
-    <a href="{{ route('admin.users.create') }}" class="add-btn">➕ إضافة مستخدم</a>
+    <a href="<?php echo e(route('admin.users.create')); ?>" class="add-btn">➕ إضافة مستخدم</a>
 
     <table>
         <thead>
@@ -84,24 +84,25 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($users as $index => $user)
+            <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
+                <td><?php echo e($index + 1); ?></td>
+                <td><?php echo e($user->name); ?></td>
+                <td><?php echo e($user->email); ?></td>
                 <td>
-                    <a href="{{ route('admin.users.edit', $user->id) }}" class="edit-link">تعديل</a> |
-                    <a href="{{ route('admin.users.show', $user->id) }}" class="edit-link">عرض</a> |
-                    <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="inline" onsubmit="return confirm('هل أنت متأكد؟')">
-                        @csrf
-                        @method('DELETE')
+                    <a href="<?php echo e(route('admin.users.edit', $user->id)); ?>" class="edit-link">تعديل</a> |
+                    <a href="<?php echo e(route('admin.users.show', $user->id)); ?>" class="edit-link">عرض</a> |
+                    <form action="<?php echo e(route('admin.users.destroy', $user->id)); ?>" method="POST" class="inline" onsubmit="return confirm('هل أنت متأكد؟')">
+                        <?php echo csrf_field(); ?>
+                        <?php echo method_field('DELETE'); ?>
                         <button type="submit" class="delete-btn">حذف</button>
                     </form>
                 </td>
             </tr>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
     </table>
 </div>
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/admin/users/index.blade.php ENDPATH**/ ?>
