@@ -22,7 +22,7 @@ class ReviewRequeat extends FormRequest
     public function rules(): array
     {
         return [
-            'rating' => 'required|integer|min:1|max:5',
+            'rating' => 'nullable|integer|min:1|max:5',
             'comment' => 'nullable|string|max:500',
             'approved'=> 'sometime|boolean'
         
