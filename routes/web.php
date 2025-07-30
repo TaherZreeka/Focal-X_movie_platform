@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 
@@ -34,4 +34,8 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::delete('/users/{id}', [AdminController::class, 'deleteUser'])->name('admin.users.delete');
         //  عرض تقارير الاعلى مشاهدة
     Route::get('/reports', [AdminController::class, 'reports'])->name('admin.reports');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('showtimes', App\Http\Controllers\ShowtimeController::class);
 });
