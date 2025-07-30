@@ -10,12 +10,15 @@ use Carbon\Carbon;
 
 class ShowtimeSeeder extends Seeder
 {
-   
+
     public function run(): void
     {
          $showtime1 = Showtime::create([
                 'movie_id' => 1,
+                'date' => '2025-07-22',
+
                 'date' => Carbon::now()->addDays(1),
+
                 'time' => '10:00',
                 'hall' => 'Hall A',
                 'price' => 30.00,
@@ -23,6 +26,7 @@ class ShowtimeSeeder extends Seeder
         ]);
            $showtime2 = Showtime::create([
                  'movie_id' => 1,
+                'date' => '2025-07-10',
                 'date' => Carbon::now()->addDays(2),
                 'time' => '18:00',
                 'hall' => 'Hall B',
@@ -31,6 +35,7 @@ class ShowtimeSeeder extends Seeder
         ]);
              $showtime3= Showtime::create([
                 'movie_id' => 2,
+                'date' => '2025-07-12',
                 'date' => Carbon::now()->addDays(3),
                 'time' => '20:00',
                 'hall' => 'VIP Lounge',
@@ -39,6 +44,7 @@ class ShowtimeSeeder extends Seeder
         ]);
              $showtime4 = Showtime::create([
                 'movie_id' => 2,
+                'date' => '2025-07-20',
                 'date' => Carbon::now()->addDays(4),
                 'time' => '14:00',
                 'hall' => 'Hall C',
@@ -47,6 +53,7 @@ class ShowtimeSeeder extends Seeder
         ]);
              $showtime5 = Showtime::create([
                  'movie_id' => 3,
+                'date' => '2025-07-27',
                 'date' => Carbon::now()->addDays(5),
                 'time' => '16:30',
                 'hall' => 'Hall A',

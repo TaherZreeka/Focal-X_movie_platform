@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
-   
+
+
     public function run(): void
     {
         $admin = User::create([
@@ -24,6 +25,5 @@ class UserSeeder extends Seeder
             'password' => Hash::make('12345678'),
             'role' => UserRole::Content->value,
         ]);
-        
     }
 }

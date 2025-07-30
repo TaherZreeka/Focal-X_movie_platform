@@ -8,8 +8,10 @@
   <div class="content-wrapper">
     <!-- Main content -->
     <section class="content">
+        <div class="flex py-3">
        <a href="{{ route('showtimes.index') }}" class="btn btn-danger mb-3"><i class="fas fa-trash"></i>All Users</a>
-      <div class="card">
+        </div>
+       <div class="card">
        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex justify-content-center align-items-center" style="height: 100px;">
                 <h6 class="text-white text-capitalize m-0"style="font-size: 32px;">All Showtime</h6>
