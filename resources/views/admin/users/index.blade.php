@@ -1,107 +1,77 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>قائمة المستخدمين</title>
-    <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f5f5f5;
-            padding: 30px;
-        }
+@extends('admin.layout.master')
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+@section('title', 'قائمة المشتركين')
 
-        h2 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
+@section('content')
+<div class="content-wrapper" dir="rtl">
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>قائمة المشتركين</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-left">
+            <li class="breadcrumb-item"><a href="/home">الرئيسية</a></li>
+            <li class="breadcrumb-item active">المشتركين</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        a.add-btn {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-bottom: 15px;
-            text-decoration: none;
-        }
+  <section class="content">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h3 class="card-title">المشتركين</h3>
+        <a href="{{ route('admin.users.create') }}" class="btn btn-success btn-sm">
+          <i class="fas fa-plus"></i> إضافة مستخدم
+        </a>
+      </div>
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f0f0f0;
-        }
-
-        a.edit-link {
-            color: #007bff;
-            text-decoration: none;
-            margin-right: 10px;
-        }
-
-        button.delete-btn {
-            color: red;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        form.inline {
-            display: inline;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <h2>قائمة المشتركين</h2>
-
-    <a href="{{ route('admin.users.create') }}" class="add-btn">➕ إضافة مستخدم</a>
-
-    <table>
-        <thead>
+      <div class="card-body p-0">
+        <table class="table table-striped projects text-center">
+          <thead class="thead-dark">
             <tr>
-                <th>#</th>
-                <th>الاسم</th>
-                <th>البريد الإلكتروني</th>
-                <th>الإجراءات</th>
+              <th style="width: 10px">#</th>
+              <th>الاسم</th>
+              <th>البريد الإلكتروني</th>
+              <th style="width: 200px">الإجراءات</th>
             </tr>
-        </thead>
-        <tbody>
+          </thead>
+          <tbody>
             @foreach($users as $index => $user)
-            <tr>
+              <tr>
                 <td>{{ $index + 1 }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>
-                    <a href="{{ route('admin.users.edit', $user->id) }}" class="edit-link">تعديل</a> |
-                    <a href="{{ route('admin.users.show', $user->id) }}" class="edit-link">عرض</a> |
-                    <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="inline" onsubmit="return confirm('هل أنت متأكد؟')">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="delete-btn">حذف</button>
-                    </form>
+                  <a href="{{ route('admin.users.show', $user->id) }}" class="btn btn-primary btn-sm">
+                    <i class="fas fa-eye"></i> عرض
+                  </a>
+                  <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-info btn-sm">
+                    <i class="fas fa-edit"></i> تعديل
+                  </a>
+                  <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="d-inline" onsubmit="return confirm('هل أنت متأكد من الحذف؟')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-sm">
+                      <i class="fas fa-trash"></i> حذف
+                    </button>
+                  </form>
                 </td>
-            </tr>
+              </tr>
             @endforeach
-        </tbody>
-    </table>
+
+            @if($users->isEmpty())
+              <tr>
+                <td colspan="4" class="text-muted">لا يوجد مشتركين حالياً.</td>
+              </tr>
+            @endif
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 </div>
-</body>
-</html>
+@endsection

@@ -1,77 +1,28 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>تعديل مسئول المحتوى</title>
-    <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f2f2f2;
-            padding: 30px;
-        }
 
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+<?php $__env->startSection('title', 'تعديل مسؤول المحتوى'); ?>
 
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
+<?php $__env->startSection('content'); ?>
+<div class="container mx-auto p-4">
+    <h2 class="text-2xl font-bold mb-4">تعديل مسؤول محتوى </h2>
+    <form action="<?php echo e(route('admin.content.update', $user->id)); ?>" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <?php echo csrf_field(); ?>
+        <?php echo method_field('PUT'); ?>
 
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+        <div class="mb-4">
+            <label for="role" class="block text-gray-700">الدور</label>
+            <select name="role" id="role" class="w-full border p-2 rounded">
+                <option value="content" <?php echo e((old('role', $user->role ?? '') == 'content') ? 'selected' : ''); ?>>ممسؤول محتوى</option>
+                <option value="user" <?php echo e((old('role', $user->role ?? '') == 'user') ? 'selected' : ''); ?>> مستخدم</option>
+            </select>
+        </div>
 
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <h2>تعديل مسئول المحتوى</h2>
-
-    <form action="<?php echo e(route('admin.content.update', $user->id)); ?>" method="POST">
-    <?php echo csrf_field(); ?>
-    <?php echo method_field('PUT'); ?>
-
-    <div class="mb-4">
-        <label>الدور:</label>
-        <select name="role" class="w-full border p-2" required>
-            <option value="user" <?php if($user->role == 'user'): ?> selected <?php endif; ?>>مشترك</option>
-            <option value="content" <?php if($user->role == 'content'): ?> selected <?php endif; ?>>مسؤول محتوى</option>
-        </select>
-    </div>
-
-    <button class="bg-blue-500 text-white px-4 py-2 rounded">تحديث الدور</button>
-</form>
-
+        <div class="flex justify-end">
+            <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">تحديث</button>
+        </div>
+    </form>
 </div>
-</body>
-</html>
-<?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/admin/content/edit.blade.php ENDPATH**/ ?>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/admin/content/edit.blade.php ENDPATH**/ ?>

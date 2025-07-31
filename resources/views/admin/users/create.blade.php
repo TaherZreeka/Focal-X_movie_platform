@@ -1,84 +1,61 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>إضافة مستخدم</title>
-    <style>
-        body {
-            font-family: 'Tahoma', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
+@extends('admin.layout.master')
 
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+@section('title', 'إضافة مستخدم')
 
-        h2 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            margin-bottom: 15px;
-        }
-
-        button {
-            background-color: #27ae60;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #219150;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>إضافة مستخدم جديد</h2>
-
-        <form action="{{ route('admin.users.store') }}" method="POST">
-            @csrf
-
-            <label>الاسم:</label>
-            <input type="text" name="name" required>
-
-            <label>البريد الإلكتروني:</label>
-            <input type="email" name="email" required>
-
-            <label>كلمة المرور:</label>
-            <input type="password" name="password" required>
-
-            <label>الدور:</label>
-            <select name="role" required>
-                <option value="user">مشترك</option>
-                <option value="content">مسؤول محتوى</option>
-                <option value="admin">مدير</option>
-            </select>
-
-            <button type="submit">إضافة</button>
-        </form>
+@section('content')
+<div class="content-wrapper" dir="rtl">
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6"><h1>إضافة مستخدم</h1></div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-left">
+            <li class="breadcrumb-item"><a href="/home">الرئيسية</a></li>
+            <li class="breadcrumb-item active">إضافة مستخدم</li>
+          </ol>
+        </div>
+      </div>
     </div>
-</body>
-</html>
+  </section>
+
+  <section class="content">
+    <div class="card card-primary">
+      <div class="card-header"><h3 class="card-title">بيانات المستخدم الجديد</h3></div>
+      <form action="{{ route('admin.users.store') }}" method="POST">
+        @csrf
+        <div class="card-body">
+          <div class="form-group">
+            <label for="name">الاسم</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">كلمة المرور</label>
+            <input type="password" name="password" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="role">الدور</label>
+            <select name="role" class="form-control">
+              <option value="user">مستخدم</option>
+              <option value="content">مسؤول محتوى</option>
+              
+            </select>
+          </div>
+        </div>
+
+        <div class="card-footer text-left">
+          <button type="submit" class="btn btn-success">
+            <i class="fas fa-save"></i> حفظ
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+@endsection

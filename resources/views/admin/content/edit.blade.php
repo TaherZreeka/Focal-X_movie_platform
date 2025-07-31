@@ -1,76 +1,49 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>تعديل مسئول المحتوى</title>
-    <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f2f2f2;
-            padding: 30px;
-        }
+@extends('admin.layout.master')
 
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+@section('title', 'تعديل مسؤول المحتوى+')
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <h2>تعديل مسئول المحتوى</h2>
-
-    <form action="{{ route('admin.content.update', $user->id) }}" method="POST">
-    @csrf
-    @method('PUT')
-
-    <div class="mb-4">
-        <label>الدور:</label>
-        <select name="role" class="w-full border p-2" required>
-            <option value="user" @if($user->role == 'user') selected @endif>مشترك</option>
-            <option value="content" @if($user->role == 'content') selected @endif>مسؤول محتوى</option>
-        </select>
+@section('content')
+<div class="content-wrapper" dir="rtl">
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6"><h1>تعديل مسؤول المحتوى</h1></div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-left">
+            <li class="breadcrumb-item"><a href="/home">الرئيسية</a></li>
+            <li class="breadcrumb-item active">تعديل دور مسؤول المحتوى</li>
+          </ol>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <button class="bg-blue-500 text-white px-4 py-2 rounded">تحديث الدور</button>
-</form>
+  <section class="content">
+    <div class="card card-info">
+      <div class="card-header"><h3 class="card-title">تعديل  دور مسؤول المحتوى</h3></div>
+      <form action="{{ route('admin.content.update', $user->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+        <div class="card-body">
+         
 
+          <div class="form-group">
+            <label for="role">الدور</label>
+            <select name="role" class="form-control">
+              <option value="user" @selected($user->role === 'user')>مستخدم</option>
+              <option value="content" @selected($user->role === 'content')>مسؤول محتوى</option>
+           
+            </select>
+          </div>
+        </div>
+
+        <div class="card-footer text-left">
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save"></i> تحديث
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
 </div>
-</body>
-</html>
+@endsection
