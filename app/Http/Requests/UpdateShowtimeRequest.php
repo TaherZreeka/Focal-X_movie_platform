@@ -24,6 +24,7 @@ class UpdateShowtimeRequest extends FormRequest
         return [
             'movie_id'   => 'exists:movies,id',
             'date'       => 'date',
+            'time'       => 'sometimes',
             'hall'       => 'string|max:255',
             'price'      => 'numeric|min:0',
             'show_type'  => 'in:morning,evening,weekend,vip',

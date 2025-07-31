@@ -34,15 +34,11 @@ class ShowtimeController extends Controller
     public function store(StoreShowtimeRequest  $request)
     {
         Showtime::create($request->validated());
-
         return redirect()->route('showtimes.index')->with('success', 'Showtime created successfully.');
-
-        return redirect()->back()->with('success', 'Showtime created successfully.');
-
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Showtime.
      */
     public function show(Showtime $showtime)
     {
@@ -65,9 +61,7 @@ class ShowtimeController extends Controller
     {
             $data = $request->validated();
             $showtime->update($data);
-            return redirect()->route('showtimes.index')->with('success', 'Showtime updated successfully');
-
-            return redirect()->back()->with('success', 'Showtime updated successfully');
+            return redirect()->route('showtimes.index')->with('success', 'Showtime updated successfully');  
     }
 
     /**

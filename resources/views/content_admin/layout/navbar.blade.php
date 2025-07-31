@@ -49,8 +49,6 @@
             </li>
             @endguest
         </ul>
-
-
     </ul>
 </nav>
 <!-- /.navbar -->

@@ -1,11 +1,17 @@
 @extends('content_admin.layout.master')
 
+<<<<<<< HEAD
 
+=======
+ 
+ 
+>>>>>>> origin/main
 @section('title', 'Showtimes Management')
 
 @section('content')
 
 
+<<<<<<< HEAD
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->
@@ -85,6 +91,12 @@
   </div>
   <!-- /.content-wrapper -->
 
+=======
+  
+    
+>>>>>>> origin/main
 @endsection
+
+
 
 

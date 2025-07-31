@@ -1,5 +1,5 @@
-
-
+ 
+ 
 <?php $__env->startSection('title', 'Showtimes Management'); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -88,6 +88,13 @@
   </section>
 </div>
 
+
+  
+    
 <?php $__env->stopSection(); ?>
+
+
+
+
 
 <?php echo $__env->make('content_admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/content_admin/show_time/index.blade.php ENDPATH**/ ?>
