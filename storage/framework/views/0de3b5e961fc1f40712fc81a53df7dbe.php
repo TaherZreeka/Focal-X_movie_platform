@@ -7,7 +7,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="flex py-3">
-       <a href="<?php echo e(route('showtimes.index')); ?>" class="btn btn-danger mb-3"><i class="fas fa-trash"></i>All Users</a>
+       <a href="<?php echo e(route('showtimes.index')); ?>" class="btn btn-danger p-2 mb-3"><i class="fas fa-trash"></i>All Showtime</a>
         </div>
        <div class="card">
        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">

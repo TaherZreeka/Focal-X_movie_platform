@@ -11,7 +11,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="flex py-3">
-        <a href="{{ route('showtimes.trash') }}" class="btn btn-danger mb-3"><i class="fas fa-trash"></i>  trashed Movies</a>
+        <a href="{{ route('showtimes.trash') }}" class="btn btn-danger mb-3"><i class="fas fa-trash"></i>  trashed Showtime</a>
          <a href="{{ route('showtimes.create') }}" class="btn btn-danger mb-3" data-toggle="tooltip" data-original-title="Edit movie">
                       <i class="fa-solid fa-plus"></i>    create
                         </a>

@@ -1,15 +1,23 @@
 <!-- Main Sidebar Container -->
 <style>
-    .sidebar {
+    .sidebar, .main-sidebar {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 250px; /* أو القيمة المناسبة لتصميمك */
+  white-space: nowrap;
   position: relative;
 }
   .logout-button {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #a00; /* لون أحمر (Bootstrap Danger) */
-    border-radius: 10px;
-  }
+  position: absolute;
+  bottom: 10px; /* بدلًا من 0 حتى لا يلتصق تمامًا */
+  left: 0;
+  right: 0;
+  width: calc(100% - 20px); /* يعطي مساحة padding تلقائية */
+  margin: 0 auto;
+  background-color: #a00;
+  border-radius: 10px;
+  overflow: hidden;
+}
   .logout-button a {
     color: white;
     padding: 10px 15px;
@@ -47,9 +55,9 @@
         </div>
 
         <!-- Sidebar Menu -->
-       <nav class="mt-2" style="flex-grow: 1; overflow-y: auto;">
+       <nav class="mt-2">
 
-            <ul class="nav nav-pills nav-sidebar flex-column"style="height: 100%; display: flex; flex-direction: column;" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                   with font-awesome or any other icon font library -->
                 <a href="/home" class="nav-link active">

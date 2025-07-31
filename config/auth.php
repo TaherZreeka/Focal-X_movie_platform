@@ -42,21 +42,16 @@ return [
         'passwords' => 'users',
     ],
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
-        'api' => [
-            'driver' => 'sanctum',
-            'provider' => 'users',
-         ],
-
-        'api' => [
-            'driver' => 'sanctum',
-            'provider' => 'users',
-            'hash' => false,
-        ],
+    'web' => [
+        'driver' => 'session',
+        'provider' => 'users',
     ],
+    'api' => [
+        'driver' => 'sanctum',
+        'provider' => 'users',
+        'hash' => false,
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------

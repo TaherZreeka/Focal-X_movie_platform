@@ -13,7 +13,7 @@ class Review extends Model
 { use HasFactory, Notifiable, HasApiTokens ;
       protected $fillable = [
 
-        'id',
+        
         'user_id',
         'movie_id',
         'rating',
