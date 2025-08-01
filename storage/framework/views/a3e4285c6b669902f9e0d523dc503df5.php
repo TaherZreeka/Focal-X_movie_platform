@@ -1,8 +1,6 @@
-@extends('admin.layout.master')
+<?php $__env->startSection('title', 'تعديل مستخدم'); ?>
 
-@section('title', 'تعديل مستخدم')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="content-wrapper" dir="rtl">
   <section class="content-header">
     <div class="container-fluid">
@@ -21,17 +19,17 @@
   <section class="content">
     <div class="card card-info">
       <div class="card-header"><h3 class="card-title">تعديل بيانات المستخدم</h3></div>
-      <form action="{{ route('admin.users.update', $user->id) }}" method="POST">
-        @csrf
-        @method('PUT')
+      <form action="<?php echo e(route('admin.users.update', $user->id)); ?>" method="POST">
+        <?php echo csrf_field(); ?>
+        <?php echo method_field('PUT'); ?>
         <div class="card-body">
          
 
           <div class="form-group">
             <label for="role">الدور</label>
             <select name="role" class="form-control">
-              <option value="user" @selected($user->role === 'user')>مستخدم</option>
-              <option value="content" @selected($user->role === 'content')>مسؤول محتوى</option>
+              <option value="user" <?php if($user->role === 'user'): echo 'selected'; endif; ?>>مستخدم</option>
+              <option value="content" <?php if($user->role === 'content'): echo 'selected'; endif; ?>>مسؤول محتوى</option>
            
             </select>
           </div>
@@ -46,4 +44,6 @@
     </div>
   </section>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/admin/users/edit.blade.php ENDPATH**/ ?>

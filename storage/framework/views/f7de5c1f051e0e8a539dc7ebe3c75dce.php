@@ -1,8 +1,6 @@
-@extends('admin.layout.master')
+<?php $__env->startSection('title', 'قائمة المشتركين'); ?>
 
-@section('title', 'قائمة المشتركين')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="content-wrapper" dir="rtl">
   <section class="content-header">
     <div class="container-fluid">
@@ -24,7 +22,7 @@
     <div class="card">
       <div class="card-header d-flex justify-content-between align-items-center">
         <h3 class="card-title">المشتركين</h3>
-        <a href="{{ route('admin.users.create') }}" class="btn btn-success btn-sm">
+        <a href="<?php echo e(route('admin.users.create')); ?>" class="btn btn-success btn-sm">
           <i class="fas fa-plus"></i> إضافة مستخدم
         </a>
       </div>
@@ -40,38 +38,40 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($users as $index => $user)
+            <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
+                <td><?php echo e($index + 1); ?></td>
+                <td><?php echo e($user->name); ?></td>
+                <td><?php echo e($user->email); ?></td>
                 <td>
-                  <a href="{{ route('admin.users.show', $user->id) }}" class="btn btn-primary btn-sm">
+                  <a href="<?php echo e(route('admin.users.show', $user->id)); ?>" class="btn btn-primary btn-sm">
                     <i class="fas fa-eye"></i> عرض
                   </a>
-                  <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-info btn-sm">
+                  <a href="<?php echo e(route('admin.users.edit', $user->id)); ?>" class="btn btn-info btn-sm">
                     <i class="fas fa-edit"></i> تعديل
                   </a>
-                  <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="d-inline" onsubmit="return confirm('هل أنت متأكد من الحذف؟')">
-                    @csrf
-                    @method('DELETE')
+                  <form action="<?php echo e(route('admin.users.destroy', $user->id)); ?>" method="POST" class="d-inline" onsubmit="return confirm('هل أنت متأكد من الحذف؟')">
+                    <?php echo csrf_field(); ?>
+                    <?php echo method_field('DELETE'); ?>
                     <button type="submit" class="btn btn-danger btn-sm">
                       <i class="fas fa-trash"></i> حذف
                     </button>
                   </form>
                 </td>
               </tr>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-            @if($users->isEmpty())
+            <?php if($users->isEmpty()): ?>
               <tr>
                 <td colspan="4" class="text-muted">لا يوجد مشتركين حالياً.</td>
               </tr>
-            @endif
+            <?php endif; ?>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/admin/users/index.blade.php ENDPATH**/ ?>

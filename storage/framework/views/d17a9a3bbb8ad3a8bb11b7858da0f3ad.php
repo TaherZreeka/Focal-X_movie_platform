@@ -1,8 +1,6 @@
-@extends('admin.layout.master')
+<?php $__env->startSection('title', 'إضافة مستخدم'); ?>
 
-@section('title', 'إضافة مستخدم')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="content-wrapper" dir="rtl">
   <section class="content-header">
     <div class="container-fluid">
@@ -21,8 +19,8 @@
   <section class="content">
     <div class="card card-primary">
       <div class="card-header"><h3 class="card-title">بيانات المستخدم الجديد</h3></div>
-      <form action="{{ route('admin.users.store') }}" method="POST">
-        @csrf
+      <form action="<?php echo e(route('admin.users.store')); ?>" method="POST">
+        <?php echo csrf_field(); ?>
         <div class="card-body">
           <div class="form-group">
             <label for="name">الاسم</label>
@@ -58,4 +56,6 @@
     </div>
   </section>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/admin/users/create.blade.php ENDPATH**/ ?>
