@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             GenreSeeder::class,
             MovieSeeder::class,
             ShowtimeSeeder::class,
+            ReviewSeeder::class,
         ]);
     }
 }
