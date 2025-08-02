@@ -3,6 +3,7 @@
 <?php $__env->startSection('content'); ?>
 
 
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->
@@ -82,7 +83,10 @@
   </div>
   <!-- /.content-wrapper -->
 
+
 <?php $__env->stopSection(); ?>
+
+
 
 
 

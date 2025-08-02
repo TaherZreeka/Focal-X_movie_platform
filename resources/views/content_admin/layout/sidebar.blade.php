@@ -116,11 +116,11 @@
 
         </nav>
         <!-- /.sidebar-menu -->
-        <div class="logout-button">
+        <div class="logout-button nav-sidebar flex-column">
   <a href="{{ route('logout') }}"class="nav-link" onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">
 
-    <i class="fas fa-sign-out-alt nav-icon"></i>
+    <i class="fas fa-sign-out-alt nav-icon "></i>
     <p class="mb-0"style="font-size:20px;color:white;"> logout</p>
   </a>
 

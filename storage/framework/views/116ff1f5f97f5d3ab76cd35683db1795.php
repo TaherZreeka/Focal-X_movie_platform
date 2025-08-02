@@ -51,8 +51,6 @@
             </li>
             <?php endif; ?>
         </ul>
-
-
     </ul>
 </nav>
 <!-- /.navbar -->

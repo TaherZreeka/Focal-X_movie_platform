@@ -6,25 +6,27 @@ use App\Http\Controllers\ShowtimeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
 
-=======
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ShowtimeController;
+
+
+
+
+
 use App\Http\Controllers\{
     MovieController,
     ShowController,
     ReviewController,
     GenreController,
 };
->>>>>>> origin/main
 
 
 Route::get('/', function () {
     return redirect('/login');
 });
+
+Route::get('/showtimes/trash', [ShowtimeController::class, 'trash'])->name('showtimes.trash');
+Route::get('/showtimes/{showtime}/restore', [ShowtimeController::class, 'restore'])->name('showtimes.restore');
+Route::delete('/showtimes/{showtime}/forcedelete', [ShowtimeController::class, 'forcedelete'])->name('showtimes.forcedelete');
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function () {
@@ -32,12 +34,12 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-<<<<<<< HEAD
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
-=======
+
 //Route::get('/users', [UserController::class, 'index'])->name('users.index');
->>>>>>> origin/main
+
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
@@ -59,11 +61,8 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/reports', [AdminController::class, 'reports'])->name('admin.reports');
 });
 
-<<<<<<< HEAD
-Route::get('/showtimes/trash', [ShowtimeController::class, 'trash'])->name('showtimes.trash');
-Route::get('/showtimes/{showtime}/restore', [ShowtimeController::class, 'restore'])->name('showtimes.restore');
-Route::delete('/showtimes/{showtime}/forcedelete', [ShowtimeController::class, 'forcedelete'])->name('showtimes.forcedelete');
-=======
+
+
 
 Route::name('content-manager.')->prefix('content_admin')->middleware(['auth', 'role:content_admin|admin'])->group(function () {
 
@@ -91,8 +90,6 @@ Route::name('content-manager.')->prefix('content_admin')->middleware(['auth', 'r
 
 });
 
-
->>>>>>> origin/main
 Route::middleware(['auth'])->group(function () {
     Route::resource('showtimes', App\Http\Controllers\ShowtimeController::class);
 });

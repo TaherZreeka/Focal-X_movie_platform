@@ -14,6 +14,7 @@ use Laravel\Sanctum\Http\Middleware\AuthenticateSession;
 
 return [
 
+      'personal_access_token_model' => Laravel\Sanctum\PersonalAccessToken::class,
     /*
     |--------------------------------------------------------------------------
     | Stateful Domains
@@ -44,7 +45,7 @@ return [
     |
     */
 
-    'guard' => ['web', 'api'],
+    'guard' => ['web'],
 
 
     /*

@@ -17,7 +17,7 @@ class ReviewController extends Controller
    public function index(Movie $movie)
 {
     $reviews = $movie->reviews()
-                     ->with('user:id,name')
+                    //  ->with('user:id,name')
                      ->paginate(10);
 
     return response()->json([
@@ -63,6 +63,7 @@ class ReviewController extends Controller
         'movie_id' => $movie->id,
         'rating' => $validated['rating'],
         'comment' => $validated['comment'],
+         'approved' => false,
     ]);
 
     return response()->json($review, 201);
