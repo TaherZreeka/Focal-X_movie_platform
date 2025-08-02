@@ -33,6 +33,64 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
+                            User Management
+
+
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/users" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>index</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/users/create" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>User Add</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Content Admin Management
+
+
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/content-managers" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>index</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/content-managers/create" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Content Admin Add</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
                             ShowTimes
                             <i class="fas fa-angle-left right"></i>
                         </p>
@@ -50,19 +108,6 @@
                                 <p>ShowTime Add</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/project_edit.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>ShowTimes Edit</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/project_detail.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>ShowTimes Detail</p>
-                            </a>
-                        </li>
-
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
@@ -86,6 +131,26 @@
                                 <p>Movie Add</p>
                             </a>
                         </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Movie Reports
+
+
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="admin/reports/index" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Reports</p>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
             </ul>

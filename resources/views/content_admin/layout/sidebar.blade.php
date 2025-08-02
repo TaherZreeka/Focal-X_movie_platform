@@ -33,9 +33,9 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
-                        User Management
+                            User Management
 
-        
+
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -55,16 +55,16 @@
                     </ul>
                 </li>
 
-            
+
 
 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
-                        Content Admin Management
+                            Content Admin Management
 
-        
+
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -137,9 +137,9 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
-                        Movie Reports
+                            Movie Reports
 
-        
+
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -150,7 +150,7 @@
                                 <p>Reports</p>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </li>
             </ul>
