@@ -96,4 +96,4 @@
 </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/admin/reports/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('content_admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/admin/reports/index.blade.php ENDPATH**/ ?>

@@ -1,4 +1,4 @@
-@extends('admin.layout.master')
+@extends('content_admin.layout.master')
 
 @section('title', 'إضافة مسؤول محتوى')
 
