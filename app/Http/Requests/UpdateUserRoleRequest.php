@@ -3,15 +3,23 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+use App\Enums\UserRole;
+use Illuminate\Validation\Rule;
 
-class ReviewRequeat extends FormRequest
+
+
+class UpdateUserRoleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
+
+       
+
     }
 
     /**
@@ -22,10 +30,7 @@ class ReviewRequeat extends FormRequest
     public function rules(): array
     {
         return [
-            'rating' => 'nullable|integer|min:1|max:5',
-            'comment' => 'nullable|string|max:500',
-            'approved'=> 'sometime|boolean'
-        
+            'role' => 'required|in:user,content',
         ];
     }
 }

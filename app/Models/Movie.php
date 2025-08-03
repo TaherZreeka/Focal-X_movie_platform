@@ -31,4 +31,10 @@ class Movie extends Model
     {
         return $this->hasMany(Showtime::class);
     }
+    
+    public function ratings()
+     {
+    return $this->hasMany(Rating::class);
+     }
+
 }

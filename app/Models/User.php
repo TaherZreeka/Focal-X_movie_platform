@@ -12,7 +12,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasApiTokens ;
+    use HasFactory, Notifiable, HasApiTokens  ;
 
 
     protected $fillable = [
@@ -39,4 +39,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Review::class);
     }
+
+    public function ratings()
+    {
+    return $this->hasMany(Rating::class);
+     }
+
 }

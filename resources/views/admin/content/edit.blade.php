@@ -1,17 +1,17 @@
 @extends('content_admin.layout.master')
 
-@section('title', 'تعديل مستخدم')
+@section('title', 'تعديل مسؤول المحتوى+')
 
 @section('content')
 <div class="content-wrapper" dir="rtl">
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6"><h1>تعديل المستخدم</h1></div>
+        <div class="col-sm-6"><h1>تعديل مسؤول المحتوى</h1></div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-left">
             <li class="breadcrumb-item"><a href="/home">الرئيسية</a></li>
-            <li class="breadcrumb-item active">تعديل مستخدم</li>
+            <li class="breadcrumb-item active">تعديل دور مسؤول المحتوى</li>
           </ol>
         </div>
       </div>
@@ -20,8 +20,8 @@
 
   <section class="content">
     <div class="card card-info">
-      <div class="card-header"><h3 class="card-title">تعديل بيانات المستخدم</h3></div>
-      <form action="{{ route('admin.users.update', $user->id) }}" method="POST">
+      <div class="card-header"><h3 class="card-title">تعديل  دور مسؤول المحتوى</h3></div>
+      <form action="{{ route('admin.content.update', $user->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="card-body">

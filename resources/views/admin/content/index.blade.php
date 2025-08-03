@@ -1,6 +1,6 @@
 @extends('content_admin.layout.master')
 
-@section('title', 'قائمة المشتركين')
+@section('title', 'قائمة مسئولي المحتوى')
 
 @section('content')
 <div class="content-wrapper" dir="rtl">
@@ -8,12 +8,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>قائمة المشتركين</h1>
+          <h1>قائمة مسئولي المحتوى</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-left">
             <li class="breadcrumb-item"><a href="/home">الرئيسية</a></li>
-            <li class="breadcrumb-item active">المشتركين</li>
+            <li class="breadcrumb-item active">مسئولي المحتوى</li>
           </ol>
         </div>
       </div>
@@ -23,9 +23,9 @@
   <section class="content">
     <div class="card">
       <div class="card-header d-flex justify-content-between align-items-center">
-        <h3 class="card-title">المشتركين</h3>
-        <a href="{{ route('admin.users.create') }}" class="btn btn-success btn-sm">
-          <i class="fas fa-plus"></i> إضافة مستخدم
+        <h3 class="card-title">مسئولي المحتوى</h3>
+        <a href="{{ route('admin.content.create') }}" class="btn btn-success btn-sm">
+          <i class="fas fa-plus"></i> إضافة مسؤول محتوى
         </a>
       </div>
 
@@ -40,19 +40,19 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($users as $index => $user)
+            @foreach($contentManagers as $index => $user)
               <tr>
                 <td>{{ $index + 1 }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>
-                  <a href="{{ route('admin.users.show', $user->id) }}" class="btn btn-primary btn-sm">
+                  <a href="{{ route('admin.content.show', $user->id) }}" class="btn btn-primary btn-sm">
                     <i class="fas fa-eye"></i> عرض
                   </a>
-                  <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-info btn-sm">
+                  <a href="{{ route('admin.content.edit', $user->id) }}" class="btn btn-info btn-sm">
                     <i class="fas fa-edit"></i> تعديل
                   </a>
-                  <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" class="d-inline" onsubmit="return confirm('هل أنت متأكد من الحذف؟')">
+                  <form action="{{ route('admin.content.destroy', $user->id) }}" method="POST" class="d-inline" onsubmit="return confirm('هل أنت متأكد من الحذف؟')">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm">
@@ -63,9 +63,9 @@
               </tr>
             @endforeach
 
-            @if($users->isEmpty())
+            @if($contentManagers->isEmpty())
               <tr>
-                <td colspan="4" class="text-muted">لا يوجد مشتركين حالياً.</td>
+                <td colspan="4" class="text-muted">لا يوجد مسئولي محتوى حالياً.</td>
               </tr>
             @endif
           </tbody>

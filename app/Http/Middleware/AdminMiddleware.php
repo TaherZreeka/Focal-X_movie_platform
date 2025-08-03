@@ -17,8 +17,14 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ( Auth::user()->role !== UserRole::Admin->value) {
+
+       
+
+
+        if (Auth::user()->role !== UserRole::Admin)
+         {
             abort(403, 'Unauthorized action (Admin only).');
+
         }
             return $next($request);
     }

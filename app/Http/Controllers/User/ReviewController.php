@@ -3,107 +3,78 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreReviewRequest;
+use App\Http\Requests\updateReviewRequest;
+use App\Http\Resources\ReviewResource;
+use App\Http\Traits\ApiResponse;
 use App\Models\Movie;
 use App\Models\Review;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
+
     public function __construct()
     {
        $this->middleware('auth:sanctum')->except(['index', 'show']);
     }
-   public function index(Movie $movie)
-{
-    $reviews = $movie->reviews()
-                    //  ->with('user:id,name')
-                     ->paginate(10);
 
-    return response()->json([
-        'status' => 'success',
-        'message' => 'تم جلب التقييمات بنجاح',
-        'data' => $reviews,
-    ]);
-}
+     use ApiResponse;
+    public function index($movieId)
+    {
+        $reviews = Review::with(['user', 'movie'])
+                    ->where('movie_id', $movieId)
+                    ->paginate(20);
+        return $this->successResponse(ReviewResource::collection($reviews),'all reviews',200);
 
-    // عرض تقييم معين (اختياري)
-   public function show(Movie $movie, Review $review)
-{
-    // تأكد أن التقييم ينتمي للفيلم (أمان إضافي)
-    if ($review->movie_id !== $movie->id) {
-        return response()->json([
-            'status' => 'error',
-            'message' => 'هذا التقييم لا ينتمي لهذا الفيلم',
-        ], 404);
     }
 
-    $review->load('user:id,name'); // جلب بيانات المستخدم المرتبط
-
-    return response()->json([
-        'status' => 'success',
-        'data' => $review,
-    ]);
-}
-    // إضافة تقييم جديد
-   public function store(Request $request, Movie $movie)
-{      $user = Auth::user();
-
-    if (!$user) {
-        return response()->json(['message' => 'Unauthorized'], 401);
-    }
-     $validated = $request->validate([
-        'rating' => 'required|integer|min:1|max:5',
-        'comment' => 'required|string|max:1000',
-    ]);
-
-    // 3. إنشاء المراجعة
-    $review = Review::create([
-        'user_id' => $user->id,
-        'movie_id' => $movie->id,
-        'rating' => $validated['rating'],
-        'comment' => $validated['comment'],
-         'approved' => false,
-    ]);
-
-    return response()->json($review, 201);
-}
-
-
-    // تحديث تقييم موجود
-   public function update(Request $request, Movie $movie, Review $review)
-{
-    if ($review->user_id !== $request->user()->id) {
-        return response()->json(['message' => 'غير مصرح لك'], 403);
+    // Show a specific review
+    public function show($movieId, $reviewId)
+    {
+        $review = Review::where('movie_id', $movieId)->where('id', $reviewId)->with('user')->firstOrFail();
+        return $this->successResponse(new ReviewResource($review),' specific review',200);
     }
 
-    $data = $request->validate([
-        'rating' => 'required|integer|min:1|max:5',
-        'comment' => 'nullable|string',
-    ]);
+    //   add new review
+    public function store(StoreReviewRequest $request, Movie $movie)
+    {
+        $review = $movie->reviews()->create([
+            'user_id' => Auth::id(),
+            'rating' => $request['rating'],
+            'comment' => $request['comment'],
+            'approved' => false,
+        ]);
+        return $this->successResponse(new ReviewResource($review),'Review created successfully',200);
+    }
 
-    $review->rating = $data['rating'];
-    $review->comment = $data['comment'] ?? null;
-    $review->save();
-
-    return response()->json([
-        'status' => 'success',
-        'message' => 'تم تعديل التقييم بنجاح',
-        'data' => $review,
-    ]);
-}
-
-    //حذف تقييم
-    public function destroy(Request $request, Movie $movie, Review $review)
+    // update review
+    public function update(updateReviewRequest $request, Movie $movie, Review $review)
     {
         if ($review->user_id !== $request->user()->id) {
-            return response()->json(['message' => 'غير مصرح لك'], 403);
+            return $this->errorResponse(' You are not authorized to update this review', 403);
         }
+        $review->rating = $request->rating;
+        $review->comment = $request->comment;
+        $review->save();
 
+        return $this->successResponse(new ReviewResource($review),'Review updated successfully',200);
+    }
+
+    //  delete review
+
+    public function destroy(Request $request, Movie $movie, Review $review)
+    {
+        dd(Auth::user());
+        if ($review->user_id !== $request->user()->id) {
+            return $this->errorResponse('You are not authorized to delete this review', 403);
+        }
+          if ($review->movie_id !== $movie->id) {
+            return $this->errorResponse('This review does not belong to the specified movie', 403);
+        }
         $review->delete();
-
-        return response()->json([
-            'message' => 'تم حذف التقييم بنجاح'
-        ]);
+        return $this->successResponse(new ReviewResource($review),'Review deleted successfully',200);
     }
 }

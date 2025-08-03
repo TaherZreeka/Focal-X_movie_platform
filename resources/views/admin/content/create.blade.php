@@ -1,17 +1,17 @@
 @extends('content_admin.layout.master')
 
-@section('title', 'إضافة مستخدم')
+@section('title', 'إضافة مسؤول محتوى')
 
 @section('content')
 <div class="content-wrapper" dir="rtl">
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6"><h1>إضافة مستخدم</h1></div>
+        <div class="col-sm-6"><h1>إضافة مسؤول محتوى</h1></div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-left">
             <li class="breadcrumb-item"><a href="/home">الرئيسية</a></li>
-            <li class="breadcrumb-item active">إضافة مستخدم</li>
+            <li class="breadcrumb-item active">إضافة مسؤول محتوى</li>
           </ol>
         </div>
       </div>
@@ -20,8 +20,8 @@
 
   <section class="content">
     <div class="card card-primary">
-      <div class="card-header"><h3 class="card-title">بيانات المستخدم الجديد</h3></div>
-      <form action="{{ route('admin.users.store') }}" method="POST">
+      <div class="card-header"><h3 class="card-title">بيانات مسؤول المحتوى الجديد</h3></div>
+      <form action="{{ route('admin.content.store') }}" method="POST">
         @csrf
         <div class="card-body">
           <div class="form-group">
