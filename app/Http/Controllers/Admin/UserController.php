@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        
+
     $users = User::where('role', 'user')->get();
     return view('admin.users.index', compact('users'));
     }
@@ -34,7 +34,7 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
 
     {
-        
+
         User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -58,19 +58,19 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-    
+
         {
             $user = User::findOrFail($id);
             return view('admin.users.edit', compact('user'));
         }
-    
+
 
     /**
      * Update the specified resource in storage.
      */
     public function update(UpdateUserRoleRequest $request, string $id)
     {
-        
+
         $user = User::findOrFail($id);
 
         $user->update([
@@ -84,7 +84,7 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
-    { 
+    {
         $user = User::findOrFail($id);
         $user->delete();
 

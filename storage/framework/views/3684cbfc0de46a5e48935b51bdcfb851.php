@@ -1,9 +1,6 @@
-@extends('content_admin.layout.master')
+<?php $__env->startSection('title', 'Showtimes Management'); ?>
 
-
-@section('title', 'Showtimes Management')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 
 
@@ -13,8 +10,8 @@
     <section class="content">
         <div class="container-fluid mx-3">
             <div class="card-header d-flex  align-items-center ">
-        <a href="{{ route('showtimes.trash') }}" class="btn btn-danger mb-3 mx-2"><i class="fas fa-trash"></i>  trashed Showtime</a>
-         <a href="{{ route('showtimes.create') }}" class="btn btn-danger mb-3" data-toggle="tooltip" data-original-title="Edit movie">
+        <a href="<?php echo e(route('showtimes.trash')); ?>" class="btn btn-danger mb-3 mx-2"><i class="fas fa-trash"></i>  trashed Showtime</a>
+         <a href="<?php echo e(route('showtimes.create')); ?>" class="btn btn-danger mb-3" data-toggle="tooltip" data-original-title="Edit movie">
                       <i class="fa-solid fa-plus"></i>    create
                         </a>
         </div>
@@ -43,26 +40,26 @@
                       </thead>
 
                       <tbody>
-                          @php $i = 0; @endphp
-                          @forelse ($showtimes as $showtime)
+                          <?php $i = 0; ?>
+                          <?php $__empty_1 = true; $__currentLoopData = $showtimes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $showtime): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                               <tr>
-                                  <td>{{ ++$i }}</td>
-                                  <td>{{ $showtime->movie->title }}</td>
-                                  <td>{{ $showtime->date }}</td>
-                                  <td>{{ $showtime->time }}</td>
-                                  <td>{{ $showtime->hall }}</td>
-                                  <td>{{ $showtime->price }}</td>
-                                  <td>{{ $showtime->show_type }}</td>
+                                  <td><?php echo e(++$i); ?></td>
+                                  <td><?php echo e($showtime->movie->title); ?></td>
+                                  <td><?php echo e($showtime->date); ?></td>
+                                  <td><?php echo e($showtime->time); ?></td>
+                                  <td><?php echo e($showtime->hall); ?></td>
+                                  <td><?php echo e($showtime->price); ?></td>
+                                  <td><?php echo e($showtime->show_type); ?></td>
                                   <td class="text-center">
-                                <form action="{{ route('showtimes.destroy', $showtime->id) }}" method="POST" class="d-inline">
-                                    <a class="btn btn-info btn-sm" href="{{ route('showtimes.show', $showtime->id) }}" title="Show">
+                                <form action="<?php echo e(route('showtimes.destroy', $showtime->id)); ?>" method="POST" class="d-inline">
+                                    <a class="btn btn-info btn-sm" href="<?php echo e(route('showtimes.show', $showtime->id)); ?>" title="Show">
                                         <i class="fa-solid fa-list"></i>
                                     </a>
-                                    <a class="btn btn-primary btn-sm" href="{{ route('showtimes.edit', $showtime->id) }}" title="Edit">
+                                    <a class="btn btn-primary btn-sm" href="<?php echo e(route('showtimes.edit', $showtime->id)); ?>" title="Edit">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
-                                    @csrf
-                                    @method('DELETE')
+                                    <?php echo csrf_field(); ?>
+                                    <?php echo method_field('DELETE'); ?>
                                     <button type="submit" class="btn btn-danger btn-sm" title="Delete"
                                         onclick="return confirm('Are you sure you want to delete this showtime?')">
                                         <i class="fa-solid fa-trash"></i>
@@ -70,11 +67,11 @@
                                 </form>
                             </td>
                               </tr>
-                          @empty
+                          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                               <tr>
                                   <td colspan="7" class="text-center">No data available.</td>
                               </tr>
-                          @endforelse
+                          <?php endif; ?>
                       </tbody>
                 </table>
               </div>
@@ -89,8 +86,10 @@
   <!-- /.content-wrapper -->
 
 
-@endsection
+<?php $__env->stopSection(); ?>
 
 
 
 
+
+<?php echo $__env->make('content_admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\rag\focla-x\Focal-X_movie_platform\resources\views/content_admin/show_time/index.blade.php ENDPATH**/ ?>

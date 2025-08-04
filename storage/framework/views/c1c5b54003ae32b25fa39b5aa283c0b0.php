@@ -1,15 +1,13 @@
-@extends('content_admin.layout.master')
+<?php $__env->startSection('title', 'قائمة مسئولي المحتوى'); ?>
 
-@section('title', 'قائمة مسئولي المحتوى')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="content-wrapper" dir="rtl">
 <section class="content">
 
 
     <div class="container-fluid">
          <div class="card-header d-flex justify-content-between align-items-center">
-        <a href="{{ route('admin.content.create') }}" class="btn btn-danger mb-3">
+        <a href="<?php echo e(route('admin.content.create')); ?>" class="btn btn-danger mb-3">
           <i class="fas fa-plus"></i> Create Content Admin
         </a>
           <div class="col-sm-6">
@@ -38,34 +36,34 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($contentManagers as $index => $user)
+            <?php $__currentLoopData = $contentManagers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
+                <td><?php echo e($index + 1); ?></td>
+                <td><?php echo e($user->name); ?></td>
+                <td><?php echo e($user->email); ?></td>
                 <td>
-                  <a href="{{ route('admin.content.show', $user->id) }}" class="btn btn-primary btn-sm">
+                  <a href="<?php echo e(route('admin.content.show', $user->id)); ?>" class="btn btn-primary btn-sm">
                     <i class="fas fa-eye"></i>
                   </a>
-                  <a href="{{ route('admin.content.edit', $user->id) }}" class="btn btn-info btn-sm">
+                  <a href="<?php echo e(route('admin.content.edit', $user->id)); ?>" class="btn btn-info btn-sm">
                     <i class="fas fa-edit"></i>
                   </a>
-                  <form action="{{ route('admin.content.destroy', $user->id) }}" method="POST" class="d-inline" onsubmit="return confirm('هل أنت متأكد من الحذف؟')">
-                    @csrf
-                    @method('DELETE')
+                  <form action="<?php echo e(route('admin.content.destroy', $user->id)); ?>" method="POST" class="d-inline" onsubmit="return confirm('هل أنت متأكد من الحذف؟')">
+                    <?php echo csrf_field(); ?>
+                    <?php echo method_field('DELETE'); ?>
                     <button type="submit" class="btn btn-danger btn-sm">
                       <i class="fas fa-trash"></i>
                     </button>
                   </form>
                 </td>
               </tr>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-            @if($contentManagers->isEmpty())
+            <?php if($contentManagers->isEmpty()): ?>
               <tr>
                 <td colspan="4" class="text-muted">لا يوجد مسئولي محتوى حالياً.</td>
               </tr>
-            @endif
+            <?php endif; ?>
           </tbody>
         </table>
       </div>
@@ -74,4 +72,6 @@
   </section>
 </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('content_admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\rag\focla-x\Focal-X_movie_platform\resources\views/admin/content/index.blade.php ENDPATH**/ ?>

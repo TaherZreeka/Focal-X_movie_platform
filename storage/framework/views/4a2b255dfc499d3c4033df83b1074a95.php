@@ -1,8 +1,6 @@
-@extends('content_admin.layout.master')
+<?php $__env->startSection('title', 'تقرير الأفلام'); ?>
 
-@section('title', 'تقرير الأفلام')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="content-wrapper" dir="rtl">
   <section class="content-header">
     <div class="container-fluid mx-4">
@@ -41,19 +39,19 @@
             </tr>
           </thead>
           <tbody>
-            @forelse($mostViewed as $index => $movie)
+            <?php $__empty_1 = true; $__currentLoopData = $mostViewed; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $movie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
               <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $movie->title }}</td>
-                <td>{{ $movie->views }}</td>
-                <td>{{ $movie->language }}</td>
-                <td>{{ $movie->year }}</td>
+                <td><?php echo e($index + 1); ?></td>
+                <td><?php echo e($movie->title); ?></td>
+                <td><?php echo e($movie->views); ?></td>
+                <td><?php echo e($movie->language); ?></td>
+                <td><?php echo e($movie->year); ?></td>
               </tr>
-            @empty
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
               <tr>
                 <td colspan="5" class="text-muted">لا توجد بيانات مشاهدة حالياً.</td>
               </tr>
-            @endforelse
+            <?php endif; ?>
           </tbody>
         </table>
       </div>
@@ -78,19 +76,19 @@
             </tr>
           </thead>
           <tbody>
-            @forelse($topRated as $index => $movie)
+            <?php $__empty_1 = true; $__currentLoopData = $topRated; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $movie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
               <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $movie->title }}</td>
-                <td>{{ number_format($movie->ratings_avg_rating, 1) }}</td>
-                <td>{{ $movie->language }}</td>
-                <td>{{ $movie->year }}</td>
+                <td><?php echo e($index + 1); ?></td>
+                <td><?php echo e($movie->title); ?></td>
+                <td><?php echo e(number_format($movie->ratings_avg_rating, 1)); ?></td>
+                <td><?php echo e($movie->language); ?></td>
+                <td><?php echo e($movie->year); ?></td>
               </tr>
-            @empty
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
               <tr>
                 <td colspan="5" class="text-muted">There are no reviews currently</td>
               </tr>
-            @endforelse
+            <?php endif; ?>
           </tbody>
         </table>
       </div>
@@ -98,4 +96,6 @@
 
   </section>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('content_admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\rag\focla-x\Focal-X_movie_platform\resources\views/admin/reports/index.blade.php ENDPATH**/ ?>

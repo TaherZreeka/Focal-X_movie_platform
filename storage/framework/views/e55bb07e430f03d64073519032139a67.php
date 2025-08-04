@@ -1,8 +1,6 @@
-@extends('content_admin.layout.master')
+<?php $__env->startSection('title', 'إضافة مسؤول محتوى'); ?>
 
-@section('title', 'إضافة مسؤول محتوى')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="content-wrapper" dir="rtl">
   <section class="content-header ">
     <div class="container-fluid ">
@@ -23,8 +21,8 @@
       <div class="w-100 bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex justify-content-center align-items-center" style="height: 100px;">
         <h3 class="text-white text-capitalize m-0"style="font-size: 32px;">New content admin details</h3>
     </div>
-      <form action="{{ route('admin.content.store') }}" method="POST">
-        @csrf
+      <form action="<?php echo e(route('admin.content.store')); ?>" method="POST">
+        <?php echo csrf_field(); ?>
         <div class="card-body">
           <div class="form-group">
             <label for="name">Name</label>
@@ -60,4 +58,6 @@
     </div>
   </section>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('content_admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\rag\focla-x\Focal-X_movie_platform\resources\views/admin/content/create.blade.php ENDPATH**/ ?>

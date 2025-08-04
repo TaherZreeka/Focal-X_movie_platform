@@ -1,17 +1,17 @@
 <!DOCTYPE html>
   <html lang="ar">
-      @include('admin.layout.header') 
+      @include('admin.layout.header')
         <body class="hold-transition sidebar-mini layout-fixed">
-            <!-- wrapper -->      
+            <!-- wrapper -->
                 <div class="wrapper">
                       <!-- Navbar -->
-                          @include('admin.layout.navbar')  
+                          @include('admin.layout.navbar')
                       <!-- /.navbar -->
                       <!-- sidebar -->
-                          @include('admin.layout.sidebar') 
+                          @include('admin.layout.sidebar')
                       <!-- /.sidebar -->
                       <!-- content -->
-                          @yield('content') 
+                          @yield('content')
                       <!-- /.content -->
                       <!-- footer -->
                             @include('admin.layout.footer')
@@ -20,7 +20,7 @@
             <!-- ./wrapper -->
 
             <!-- jQuery -->
-                
+
                 <!-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) -->
                 @vite(['resources/js/app.js'])
 
@@ -59,6 +59,7 @@
                 <script src="dist/js/pages/dashboard.js"></script>
                 <!-- AdminLTE for demo purposes -->
                 <script src="dist/js/demo.js"></script>
+                
             <!-- ./jQuery -->
         </body>
   </html>

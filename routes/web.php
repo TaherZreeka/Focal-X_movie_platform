@@ -1,25 +1,26 @@
 <?php
 
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\ContentManagerController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShowtimeController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ContentManagerController;
-
-
-use App\Http\Controllers\{
-    MovieController,
-    ShowController,
-    ReviewController,
-    GenreController,
-};
 
 
 
 
+
+
+
+
+
+Auth::routes();
 
 Route::get('/', function () {
     return redirect('/login');
@@ -48,7 +49,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
-    Route::resource('users', UserController::class)->names('admin.users');
+     Route::resource('users', UserController::class)->names('admin.users');
     Route::resource('content-managers', ContentManagerController::class)->names('admin.content');
         //  عرض تقارير الاعلى مشاهدة
     Route::get('/reports', [AdminController::class, 'reports'])->name('admin.reports');

@@ -1,17 +1,15 @@
-@extends('content_admin.layout.master')
+<?php $__env->startSection('title', 'إضافة مستخدم'); ?>
 
-@section('title', 'إضافة مسؤول محتوى')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="content-wrapper" dir="rtl">
-  <section class="content-header ">
-    <div class="container-fluid ">
-      <div class="row m-2">
-        <div class="col-sm-6"><h1>  Create Content Admin</h1></div>
+  <section class="content-header">
+    <div class="container-fluid mx-3">
+      <div class="row mb-2">
+        <div class="col-sm-6"><h1> Create User</h1></div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
-            <li class="breadcrumb-item active">Create Content Admin</li>
+            <li class="breadcrumb-item active"> Create User</li>
           </ol>
         </div>
       </div>
@@ -19,32 +17,32 @@
   </section>
 
   <section class="content mx-3">
-    <div class="card p-0 position-relative mt-n4 mx-3 z-index-2">
+    <div class="card p-0 position-relative mt-n4 mx-3 z-index-2 ">
       <div class="w-100 bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex justify-content-center align-items-center" style="height: 100px;">
-        <h3 class="text-white text-capitalize m-0"style="font-size: 32px;">New content admin details</h3>
+        <h3 class="text-white text-capitalize m-0"style="font-size: 32px;">  New user data</h3>
     </div>
-      <form action="{{ route('admin.content.store') }}" method="POST">
-        @csrf
+      <form action="<?php echo e(route('admin.users.store')); ?>" method="POST">
+        <?php echo csrf_field(); ?>
         <div class="card-body">
           <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">name</label>
             <input type="text" name="name" class="form-control" required>
           </div>
 
           <div class="form-group">
-            <label for="email"> Email</label>
+            <label for="email">email </label>
             <input type="email" name="email" class="form-control" required>
           </div>
 
           <div class="form-group">
-            <label for="password">Password </label>
+            <label for="password"> password</label>
             <input type="password" name="password" class="form-control" required>
           </div>
 
           <div class="form-group">
             <label for="role">Role</label>
             <select name="role" class="form-control">
-              <option value="user">User</option>
+              <option value="user">user</option>
               <option value="content"> Content Admin</option>
 
             </select>
@@ -60,4 +58,6 @@
     </div>
   </section>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('content_admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\rag\focla-x\Focal-X_movie_platform\resources\views/admin/users/create.blade.php ENDPATH**/ ?>
