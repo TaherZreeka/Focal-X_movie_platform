@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>movie_platform | Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- روابط CSS -->
@@ -17,4 +17,5 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700">
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="dist/css/custom.css">
-</head><?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/admin/layout/header.blade.php ENDPATH**/ ?>
+</head>
+<?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/admin/layout/header.blade.php ENDPATH**/ ?>
