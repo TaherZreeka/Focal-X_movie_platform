@@ -120,13 +120,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/movies" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>index</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/examples/project_add.html" class="nav-link">
+                            <a href="/movies/create" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Movie Add</p>
                             </a>

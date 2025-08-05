@@ -33,6 +33,64 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
+                            User Management
+
+
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/users" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>index</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/users/create" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>User Add</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Content Admin Management
+
+
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/content-managers" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>index</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/content-managers/create" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Content Admin Add</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
                             ShowTimes
                             <i class="fas fa-angle-left right"></i>
                         </p>
@@ -62,17 +120,37 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/movies" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>index</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/examples/project_add.html" class="nav-link">
+                            <a href="/movies/create" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Movie Add</p>
                             </a>
                         </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Movie Reports
+
+
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/reports" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Reports</p>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
             </ul>
