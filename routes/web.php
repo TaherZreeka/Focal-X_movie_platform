@@ -88,6 +88,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('showtimes', App\Http\Controllers\ShowtimeController::class);
 });
 
-
+Route::get('/home', [AdminController::class, 'home'])->name('home');
 
 

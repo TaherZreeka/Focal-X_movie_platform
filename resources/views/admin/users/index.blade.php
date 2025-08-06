@@ -3,7 +3,7 @@
 @section('title', 'قائمة المشتركين')
 
 @section('content')
-<div class="content-wrapper" dir="rtl">
+<div class="content-wrapper" dir="ltr">
 <section class="content ">
 
     <div class="container-fluid flex">
@@ -14,7 +14,7 @@
           <i class="fas fa-plus"></i> Create User
         </a>
         <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
+          <ol class="breadcrumb float-sm-left">
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
             <li class="breadcrumb-item active">Users</li>
           </ol>

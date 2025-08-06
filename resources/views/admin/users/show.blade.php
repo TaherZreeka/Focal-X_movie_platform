@@ -3,7 +3,7 @@
 @section('title', 'تفاصيل المستخدم')
 
 @section('content')
-<div class="content-wrapper" dir="rtl">
+<div class="content-wrapper" dir="ltr">
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">

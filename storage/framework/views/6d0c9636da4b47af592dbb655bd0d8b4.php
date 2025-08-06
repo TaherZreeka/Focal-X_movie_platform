@@ -25,7 +25,7 @@
             <!-- /.control-sidebar -->
         </div>
         <!-- ./wrapper -->
-        
+
 
         <!-- jQuery -->
 
@@ -70,4 +70,4 @@
 
     </body>
 </html>
-    <?php /**PATH D:\rag\focla-x\Focal-X_movie_platform\resources\views/content_admin/layout/master.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\rag\focla-x\Focal-X_movie_platform\resources\views/content_admin/layout/master.blade.php ENDPATH**/ ?>

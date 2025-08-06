@@ -249,8 +249,8 @@
   position: absolute;
   display: block;
   bottom: -2px;
-  left: 0;
-  right: auto;
+  right: 0;
+  left: auto;
   height: auto;
   width: 4px; }
 
@@ -352,7 +352,7 @@
   width: 16px;
   margin-right: 6px;
   margin-top: 6px;
-  margin-left: 0;
+  margin-right: 0;
   display: block;
   -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
@@ -363,37 +363,37 @@
 .colorpicker-swatch--inner {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%; }
 
 .colorpicker-swatch:nth-of-type(7n+0) {
-  margin-right: 0; }
+  margin-left: 0; }
 
 .colorpicker-with-alpha .colorpicker-swatch:nth-of-type(7n+0) {
-  margin-right: 6px; }
+  margin-left: 6px; }
 
 .colorpicker-with-alpha .colorpicker-swatch:nth-of-type(8n+0) {
-  margin-right: 0; }
+  margin-left: 0; }
 
 .colorpicker-horizontal .colorpicker-swatch:nth-of-type(6n+0) {
-  margin-right: 0; }
+  margin-left: 0; }
 
 .colorpicker-horizontal .colorpicker-swatch:nth-of-type(7n+0) {
-  margin-right: 6px; }
+  margin-left: 6px; }
 
 .colorpicker-horizontal .colorpicker-swatch:nth-of-type(8n+0) {
-  margin-right: 6px; }
+  margin-left: 6px; }
 
 .colorpicker-swatch:last-of-type:after {
   content: "";
   display: table;
   clear: both; }
 
-*[dir='rtl'] .colorpicker-element input,
-.colorpicker-element[dir='rtl'] input,
-.colorpicker-element input[dir='rtl'] {
+*[dir='ltr'] .colorpicker-element input,
+.colorpicker-element[dir='ltr'] input,
+.colorpicker-element input[dir='ltr'] {
   direction: ltr;
-  text-align: right; }
+  text-align: left; }
 
 /*# sourceMappingURL=bootstrap-colorpicker.css.map */

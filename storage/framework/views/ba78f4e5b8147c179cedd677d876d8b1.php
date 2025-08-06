@@ -8,10 +8,15 @@
 
 
     .nav-item .nav-link {
-        padding-right:0px;
-        padding-left: 15px;
+        padding-left:0px;
+        padding-right: 15px;
+        margin-top: 15px
     }
+.nav-sidebar {
 
+  direction: ltr;
+  text-align: left;
+}
   .logout-button {
   position: absolute;
   bottom: 10px; /* بدلًا من 0 حتى لا يلتصق تمامًا */
@@ -71,7 +76,7 @@
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             User Management
-                            <i class="fas fa-angle-left right"></i>
+                            <i class="fas fa-angle-right right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -100,7 +105,7 @@
                             Content Admin Management
 
 
-                            <i class="fas fa-angle-left right"></i>
+                            <i class="fas fa-angle-right right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -123,7 +128,7 @@
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             ShowTimes
-                            <i class="fas fa-angle-left right"></i>
+                            <i class="fas fa-angle-right right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -146,7 +151,7 @@
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             Movies
-                            <i class="fas fa-angle-left right"></i>
+                            <i class="fas fa-angle-right right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -173,7 +178,7 @@
                             Movie Reports
 
 
-                            <i class="fas fa-angle-left right"></i>
+                            <i class="fas fa-angle-right right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
