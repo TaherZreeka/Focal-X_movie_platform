@@ -1,5 +1,4 @@
-@extends('admin.layout.master')
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 
 <div class="content-wrapper">
@@ -13,8 +12,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
-                         
+                        <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -31,7 +29,5 @@
 </div>
 <!-- /.content-wrapper -->
 
-@endsection
-                    
-                    
-                    
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('content_admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/content_admin/dashboard.blade.php ENDPATH**/ ?>
