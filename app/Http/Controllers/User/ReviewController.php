@@ -34,8 +34,11 @@ class ReviewController extends Controller
     // Show a specific review
     public function show($movieId, $reviewId)
     {
-        $review = Review::where('movie_id', $movieId)->where('id', $reviewId)->with('user')->firstOrFail();
-        return $this->successResponse(new ReviewResource($review),' specific review',200);
+        $review = Review::where('movie_id', $movieId)->where('id', $reviewId)->with('user')->first();
+        if( $review)
+             return $this->successResponse(new ReviewResource($review),'Review retrieved successfully',200);
+        return $this->errorResponse(' No review found for this movie with the specified ID', 403);
+    
     }
 
     //   add new review
@@ -44,8 +47,7 @@ class ReviewController extends Controller
         $review = $movie->reviews()->create([
             'user_id' => Auth::id(),
             'rating' => $request['rating'],
-            'comment' => $request['comment'],
-            'approved' => false,
+            'comment' => $request['comment']
         ]);
         return $this->successResponse(new ReviewResource($review),'Review created successfully',200);
     }
@@ -55,6 +57,9 @@ class ReviewController extends Controller
     {
         if ($review->user_id !== $request->user()->id) {
             return $this->errorResponse(' You are not authorized to update this review', 403);
+        }
+         if ($review->movie_id !== $movie->id) {
+            return $this->errorResponse('This review does not belong to the specified movie', 403);
         }
         $review->rating = $request->rating;
         $review->comment = $request->comment;
@@ -67,7 +72,6 @@ class ReviewController extends Controller
 
     public function destroy(Request $request, Movie $movie, Review $review)
     {
-        dd(Auth::user());
         if ($review->user_id !== $request->user()->id) {
             return $this->errorResponse('You are not authorized to delete this review', 403);
         }
@@ -75,6 +79,6 @@ class ReviewController extends Controller
             return $this->errorResponse('This review does not belong to the specified movie', 403);
         }
         $review->delete();
-        return $this->successResponse(new ReviewResource($review),'Review deleted successfully',200);
+        return $this->successResponse(null,'Review deleted successfully',200);
     }
 }
