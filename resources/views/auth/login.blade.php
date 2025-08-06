@@ -97,6 +97,21 @@
 
 <body class="hold-transition login-page">
     <div class="login-box">
+        <!-- عرض رسالة الخطأ إذا وجدت -->
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="login-logo">
             <a href="../../index2.html"><b>login</b></a>
         </div>

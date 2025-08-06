@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('trailer_url')->nullable();
             $table->string('age_rating')->nullable(); 
+            $table->string('movie_url')->nullable();
             $table->timestamps();
         });
     }
