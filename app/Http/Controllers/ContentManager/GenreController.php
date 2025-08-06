@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\ContentManager;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\GenreRequeat;
 use App\Models\Genre;
 use Illuminate\Http\Request;

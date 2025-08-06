@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\ContentManager;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreShowtimeRequest;
 use App\Http\Requests\UpdateShowtimeRequest;
+use App\Models\Genre;
 use App\Models\Movie;
 use App\Models\Showtime;
 use Illuminate\Http\Request;
