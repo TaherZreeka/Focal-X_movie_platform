@@ -8,7 +8,7 @@
 
 <div align="center">
 
-![Movie Platform Management System](Screenshot/Focal%20X%20.png)
+![Movie Platform Management System](screenshot/Focal%20X%20.png)
 
 *Movie Platform Management System Interface*
 
