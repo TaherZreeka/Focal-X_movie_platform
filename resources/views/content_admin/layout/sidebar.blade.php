@@ -108,58 +108,7 @@
 
               </p>
             </a></li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-book"></i>
-                        <p>
-                            User Management
-                            <i class="fas fa-angle-right right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/admin/users" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>index</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/users/create" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>User Add</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
 
-
-
-
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link {{ request()->is('admin/content-managers*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-book"></i>
-                        <p>
-                            Content Admin Management
-
-
-                            <i class="fas fa-angle-right right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/admin/content-managers" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>index</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/admin/content-managers/create" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Content Admin Add</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link {{ request()->is('showtimes*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-book"></i>
@@ -209,27 +158,6 @@
                     </ul>
                 </li>
 
-
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link {{ request()->is('admin/reports*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-book"></i>
-                        <p>
-                            Movie Reports
-
-
-                            <i class="fas fa-angle-right right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/admin/reports" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Reports</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link {{ request()->is('reviews*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-book"></i>
