@@ -202,7 +202,7 @@
 
                 <!-- Movies -->
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link {{ request()->is('admin/Movies*') ? 'active' : '' }}">
+                    <a href="#" class="nav-link {{ request()->is('admin/movies*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             Movies
@@ -211,13 +211,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/Movies" class="nav-link">
+                            <a href="/movies" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Index</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/Movies/create" class="nav-link">
+                            <a href="/movies/create" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Movie Add</p>
                             </a>

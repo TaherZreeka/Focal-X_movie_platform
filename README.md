@@ -1,61 +1,99 @@
+# 🎬 Movie Platform Management System
 
-> An integrated movie platform management system that allows users to browse movies, rate them, and write reviews, with an admin dashboard for administrators and content managers.
+> A comprehensive and integrated platform for browsing, reviewing, and managing movies, with robust features for both users and administrators.
 
 ---
 
-## 📸 Screenshots
+##  Presented by
 
 <div align="center">
 
-![Movie Platform Management System](screenshot/Focal%20X%20.png)
-
-*Movie Platform Management System Interface*
+![Presented by](screenshot/Focal%20X%20.png)  
 
 </div>
 
 ---
+## 📸 Screenshots
 
-## 📋 Table of Contents
+<div align="center">
 
-- [Screenshots](#-screenshots)
-- [Project Idea](#-project-idea)
-- [Requirements](#-requirements)
-- [Installation & Setup](#-installation--setup)
-- [System Roles](#-system-roles)
-- [Database Structure](#-database-structure)
-- [Interfaces & Links](#-interfaces--links)
-- [API Documentation](#-api-documentation)
-- [Login Information](#-login-information)
+![Movie Platform Management System](screenshot/Screenshot%20(137).png)  
+![Movie Platform Management System](screenshot/Screenshot%20(138).png)  
+![Movie Platform Management System](screenshot/Screenshot%20(138).png)  
+![Movie Platform Management System](screenshot/Screenshot%20(139).png)  
+![Movie Platform Management System](screenshot/Screenshot%20(140).png)  
+![Movie Platform Management System](screenshot/Screenshot%20(141).png)  
+![Movie Platform Management System](screenshot/Screenshot%20(142).png)  
+![Movie Platform Management System](screenshot/Screenshot%20(143).png)  
+![Movie Platform Management System](screenshot/Screenshot%20(144).png)  
+
+</div>
+
+## 📚 Table of Contents
+
+- [🎬 Movie Platform Management System](#-movie-platform-management-system)
+  - [Presented by](#presented-by)
+  - [📸 Screenshots](#-screenshots)
+  - [📚 Table of Contents](#-table-of-contents)
+  - [🚀 Project Overview](#-project-overview)
+  - [⚙️ Requirements](#️-requirements)
+  - [🛠 Installation \& Setup](#-installation--setup)
+    - [1. Clone the Repository](#1-clone-the-repository)
+    - [2. Install Dependencies](#2-install-dependencies)
+    - [3. Configure Environment](#3-configure-environment)
+    - [4. Set Up the Database](#4-set-up-the-database)
+    - [5. Run the Application](#5-run-the-application)
+  - [👥 System Roles](#-system-roles)
+  - [🗄 Database Structure](#-database-structure)
+    - [`users`](#users)
+    - [`movies`](#movies)
+    - [`reviews`](#reviews)
+    - [`genres`](#genres)
+  - [🔗 Interfaces \& Routes](#-interfaces--routes)
+  - [📚 API Documentation](#-api-documentation)
+    - [🔐 Authentication](#-authentication)
+    - [🎬 Movies](#-movies)
+    - [⭐ Reviews](#-reviews)
+    - [🧾 Sample Responses](#-sample-responses)
+      - [Movie Response:](#movie-response)
+      - [Review Response:](#review-response)
+  - [🔑 Sample Credentials](#-sample-credentials)
+    - [👨‍💼 Admin](#-admin)
+    - [👨‍💻 Content Admin](#-content-admin)
+  - [📞 Support \& Contributions](#-support--contributions)
+  - [🏆 Acknowledgments](#-acknowledgments)
+    - [🎉 Special Thanks](#-special-thanks)
+    - [👨‍💻 Development Team](#-development-team)
 
 ---
 
-## 🚀 Project Idea
+## 🚀 Project Overview
 
-An integrated web system for managing a movie platform that allows users to:
+The **Movie Platform Management System** is a full-stack Laravel application designed to:
 
-- ✅ **Registration and Login** - Secure authentication system
-- 🎭 **Movie Browsing** - Comprehensive list with complete details
-- ⭐️ **Ratings and Reviews** - Interactive rating system
-- 📊 **Advanced Dashboard** - Comprehensive content and user management
-- 🔐 **Multi-level Permissions** - Different roles for administrators and users
+- ✅ Allow user **registration and authentication**
+- 🎥 Enable **movie browsing** with detailed information
+- ⭐ Let users **rate and review** movies
+- 📊 Provide an **admin dashboard** for content and user management
+- 🔐 Enforce **role-based access control** for admins, content managers, and users
 
 ---
 
 ## ⚙️ Requirements
 
-| Component | Required Version |
-|-----------|------------------|
-| PHP | >= 8.2 |
-| Composer | Latest version |
-| Laravel | 12.x |
-| Database | MySQL or SQLite |
-| Node.js | Latest version |
+| Component   | Version           |
+|------------|-------------------|
+| PHP        | ≥ 8.2             |
+| Composer   | Latest            |
+| Laravel    | 12.x              |
+| Database   | MySQL / SQLite    |
+| Node.js    | Latest (v18+)     |
 
 ---
 
 ## 🛠 Installation & Setup
 
-### 1. Clone the Project
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/TaherZreeka/Focal-X_movie_platform.git
 cd Movie_Platform_Management_System
@@ -63,104 +101,63 @@ cd Movie_Platform_Management_System
 
 ### 2. Install Dependencies
 ```bash
-# Install PHP packages
-composer install
-
-# Install Node.js packages
-npm install
+composer install      # PHP dependencies
+npm install           # JS dependencies
 ```
 
-### 3. Environment Setup
+### 3. Configure Environment
 ```bash
-# Copy environment file
 cp .env.example .env
-
-# Generate application key
 php artisan key:generate
 ```
 
-### 4. Database Setup
+### 4. Set Up the Database
 ```bash
-# Create database and run migrations
 php artisan migrate --seed
 ```
 
 ### 5. Run the Application
 ```bash
-# Start development server
-php artisan serve
-
-# Run Vite for frontend (in separate terminal)
-npm run dev
+php artisan serve     # Start Laravel dev server
+npm run dev           # Compile frontend assets with Vite
 ```
 
 ---
 
 ## 👥 System Roles
 
-| Role | Permissions | Access |
-|------|-------------|--------|
-| **Admin** | Full system management | `/admin` |
-| **Content Admin** | Movie and content management | `/content_admin` |
-| **User** | Browse movies and reviews | `/movies` |
+| Role            | Permissions                    | Dashboard Route   |
+|-----------------|--------------------------------|-------------------|
+| **Admin**       | Full system access             | `/admin`          |
+| **Content Admin** | Manage movies & content      | `/content_admin`  |
+| **User**        | View movies, post reviews      | `/movies`         |
 
 ---
 
 ## 🗄 Database Structure
 
-### Main Tables
+### `users`
+- `id`, `name`, `email`, `password`, `role`
 
-#### `users` - Users Table
-```sql
-- id (Primary Key)
-- name
-- email
-- password
-- role (admin, content_admin, user)
-```
+### `movies`
+- `id`, `title`, `genre_id`, `year`, `duration`, `language`, `poster_url`, `description`, `trailer_url`, `age_rating`, `views`, `movie_url`
 
-#### `movies` - Movies Table
-```sql
-- id (Primary Key)
-- title
-- genre_id (Foreign Key)
-- year
-- duration
-- language
-- poster_url
-- description
-- trailer_url
-- age_rating
-- views
-- movie_url
-```
+### `reviews`
+- `id`, `user_id`, `movie_id`, `rating`, `comment`, `approved`
 
-#### `reviews` - Reviews Table
-```sql
-- id (Primary Key)
-- user_id (Foreign Key)
-- movie_id (Foreign Key)
-- rating
-- comment
-- approved
-```
-
-#### `genres` - Genres Table
-```sql
-- id (Primary Key)
-- name
-```
+### `genres`
+- `id`, `name`
 
 ---
 
-## 🔗 Interfaces & Links
+## 🔗 Interfaces & Routes
 
-| Interface | Link | Description |
-|-----------|------|-------------|
-| Admin Dashboard | `/admin` | Full system management |
-| Content Admin Dashboard | `/content_admin` | Movie and content management |
-| Movies Page | `/movies` | Browse movies |
-| Login Page | `/login` | User login |
+| Page                  | Route             | Description                      |
+|-----------------------|------------------|----------------------------------|
+| Admin Dashboard       | `/admin`         | Full system management           |
+| Content Admin Panel   | `/content_admin` | Manage movie content             |
+| Movie Browsing Page   | `/movies`        | Public user movie interface      |
+| Login Page            | `/login`         | Login for all roles              |
 
 ---
 
@@ -168,32 +165,32 @@ npm run dev
 
 ### 🔐 Authentication
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/register` | Register new user |
-| `POST` | `/api/login` | User login |
-| `POST` | `/api/logout` | User logout (requires token) |
+| Method | Endpoint        | Description           |
+|--------|-----------------|-----------------------|
+| POST   | `/api/register` | Register a new user   |
+| POST   | `/api/login`    | User login            |
+| POST   | `/api/logout`   | Logout (with token)   |
 
 ### 🎬 Movies
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/movies` | List movies (with pagination) |
-| `GET` | `/api/movies/{movie}` | Get specific movie details |
+| Method | Endpoint                | Description                      |
+|--------|-------------------------|----------------------------------|
+| GET    | `/api/movies`           | List all movies (paginated)     |
+| GET    | `/api/movies/{id}`      | Fetch movie details             |
 
-### ⭐️ Reviews
+### ⭐ Reviews
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/movies/{movie}/reviews` | All movie reviews |
-| `GET` | `/api/movies/{movie}/reviews/{review}` | Specific review |
-| `POST` | `/api/movies/{movie}/reviews` | Add review (requires token) |
-| `PUT` | `/api/movies/{movie}/reviews/{review}` | Edit review (requires token) |
-| `DELETE` | `/api/movies/{movie}/reviews/{review}` | Delete review (requires token) |
+| Method | Endpoint                                      | Description                      |
+|--------|-----------------------------------------------|----------------------------------|
+| GET    | `/api/movies/{id}/reviews`                    | Get all reviews for a movie     |
+| GET    | `/api/movies/{id}/reviews/{review_id}`        | View specific review            |
+| POST   | `/api/movies/{id}/reviews`                    | Submit a review (auth required) |
+| PUT    | `/api/movies/{id}/reviews/{review_id}`        | Update review (auth required)   |
+| DELETE | `/api/movies/{id}/reviews/{review_id}`        | Delete review (auth required)   |
 
-### 📝 Response Examples
+### 🧾 Sample Responses
 
-#### Movie Response Example:
+#### Movie Response:
 ```json
 {
   "id": 1,
@@ -210,7 +207,7 @@ npm run dev
 }
 ```
 
-#### Review Response Example:
+#### Review Response:
 ```json
 {
   "id": 1,
@@ -229,31 +226,67 @@ npm run dev
 
 ---
 
-## 🔑 Login Information
+## 🔑 Sample Credentials
 
-### 👨‍💼 System Administrator
+### 👨‍💼 Admin
 ```
-Email: admin@gmail.com
+Email: admin@gmail.com  
 Password: 12345678
 ```
 
-### 👨‍💻 Content Administrator
+### 👨‍💻 Content Admin
 ```
-Email: content_admin@gmail.com
+Email: content_admin@gmail.com  
 Password: 12345678
 ```
 
 ---
 
-## 📞 Support & Contribution
+## 📞 Support & Contributions
 
-If you encounter any issues or have suggestions, please contact us or create an issue in the repository.
+If you find bugs, need help, or would like to contribute:
+
+- Open an issue on the [GitHub repo](https://github.com/TaherZreeka/Focal-X_movie_platform)
+- Fork and submit a pull request
+- Contact the team for feedback or collaboration
 
 ---
+
+## 🏆 Acknowledgments
 
 <div align="center">
 
-**🎬 Movie Platform Management System**  
-*Integrated Movie Platform Management System*
+### 🎉 Special Thanks
+
+**Focal X Agent**  
+For their commitment to student growth and learning opportunities.
+
+**Mentors**  
+**Ms. Tuka**  
+- Technical guidance  
+- Concept clarification  
+- Inspirational mentorship
+
+**Mr. Ali Mohamad**  
+- Support throughout development
+
+**Focal X Team**  
+- For building and supporting this educational journey
+
+---
+
+### 👨‍💻 Development Team
+
+| Role               | Name                      |
+|--------------------|---------------------------|
+| Lead Developer     | Taher Saleh Zreeka        |
+| Vice Lead          | Noor Suhail Al-Kanj       |
+| Frontend Specialist| Raghad Omar Shawish       |
+| Backend Developer  | Khalid Ayman Thakrallah   |
+| Database Specialist| Ibrahim Sarour            |
+
+---
+
+**Thank you to all educators, mentors, and contributors who made this project a reality.**
 
 </div>
