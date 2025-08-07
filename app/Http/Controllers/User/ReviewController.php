@@ -9,15 +9,22 @@ use App\Http\Resources\ReviewResource;
 use App\Http\Traits\ApiResponse;
 use App\Models\Movie;
 use App\Models\Review;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
+
+    public function __construct()
+    {
+       $this->middleware('auth:sanctum')->except(['index', 'show']);
+    }
+
      use ApiResponse;
     public function index($movieId)
     {
-        $reviews = Review::with(['user', 'movie']) 
+        $reviews = Review::with(['user', 'movie'])
                     ->where('movie_id', $movieId)
                     ->paginate(20);
         return $this->successResponse(ReviewResource::collection($reviews),'all reviews',200);
@@ -38,6 +45,7 @@ class ReviewController extends Controller
             'user_id' => Auth::id(),
             'rating' => $request['rating'],
             'comment' => $request['comment'],
+            'approved' => false,
         ]);
         return $this->successResponse(new ReviewResource($review),'Review created successfully',200);
     }
@@ -55,7 +63,8 @@ class ReviewController extends Controller
         return $this->successResponse(new ReviewResource($review),'Review updated successfully',200);
     }
 
-    //  delete review 
+    //  delete review
+
     public function destroy(Request $request, Movie $movie, Review $review)
     {
         dd(Auth::user());

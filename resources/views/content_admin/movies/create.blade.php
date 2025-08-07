@@ -23,7 +23,7 @@
     </section>
 
     <section class="content">
-        <form action="{{ route('movies.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('content_admin.movies.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-md-6">
@@ -143,7 +143,7 @@
             <!-- Buttons -->
             <div class="row">
                 <div class="col-12">
-                    <a href="{{ route('movies.index') }}" class="btn btn-secondary">Cancel</a>
+                    <a href="{{ route('content_admin.movies.index') }}" class="btn btn-secondary">Cancel</a>
                     <button type="submit" class="btn btn-success float-right">Create movies</button>
                 </div>
             </div>

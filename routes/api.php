@@ -15,14 +15,15 @@ Route::post('login',[AuthController::class,"login"]);
 Route::post('logout',[AuthController::class,"logout"])->middleware('auth:sanctum');
 
 
+Route::get('/movies/{movie}/reviews', [ReviewController::class, 'index']);
+Route::get('/movies/{movie}/reviews/{review}', [ReviewController::class, 'show']);
 Route::middleware('auth:sanctum')->group(function () {
-Route::post('/movies/{movieId}/reviews', [ReviewController::class, 'store']);
-Route::put('/movies/{movieId}/reviews/{reviewId}', [ReviewController::class, 'update']);
-Route::delete('/movies/{movieId}/reviews/{reviewId}', [ReviewController::class, 'destroy']);
+    Route::post('/movies/{movie}/reviews', [ReviewController::class, 'store']);
+    Route::put('/movies/{movie}/reviews/{review}', [ReviewController::class, 'update']);
+    Route::delete('/movies/{movie}/reviews/{review}', [ReviewController::class, 'destroy']);
 });
 
-Route::get('/movies/{movieId}/reviews', [ReviewController::class, 'index']);
-Route::get('/movies/{movieId}/reviews/{reviewId}', [ReviewController::class, 'show']);
+
 
 Route::get('/movies', [MovieController::class, 'index']);
 Route::get('/movies/{movie}', [MovieController::class, 'show']);

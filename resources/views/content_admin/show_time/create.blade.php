@@ -7,7 +7,7 @@
 
 <div class="content-wrapper" dir="ltr">
     <section class="content-header">
-        <div class="container-fluid">
+        <div class="container-fluid mx-3">
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Add Showtime</h1>
@@ -22,7 +22,7 @@
         </div>
     </section>
 
-    <section class="content">
+    <section class="content mx-5">
         <form action="{{ route('showtimes.store') }}" method="POST">
             @csrf
             <div class="row">

@@ -4,7 +4,7 @@
 
 <div class="content-wrapper" dir="ltr">
     <section class="content-header">
-        <div class="container-fluid">
+        <div class="container-fluid mx-3">
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>Add Showtime</h1>
@@ -19,7 +19,7 @@
         </div>
     </section>
 
-    <section class="content">
+    <section class="content mx-5">
         <form action="<?php echo e(route('showtimes.store')); ?>" method="POST">
             <?php echo csrf_field(); ?>
             <div class="row">
@@ -109,4 +109,5 @@
     </section>
 </div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('content_admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\focal x\Focal_X-Graduation-Project\Movie_Platform_Management_System\resources\views/content_admin/show_time/create.blade.php ENDPATH**/ ?>

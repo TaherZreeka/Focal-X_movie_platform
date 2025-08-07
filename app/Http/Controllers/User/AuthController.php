@@ -22,9 +22,9 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'user' 
+            'role' => 'user'
         ]);
-            return $this->successResponse( new UserResource($user),'user registerd successfully',201); 
+            return $this->successResponse( new UserResource($user),'user registerd successfully',201);
     }
 
     public function login(LoginRequest $request)
@@ -42,7 +42,7 @@ class AuthController extends Controller
 
     public function logout(Request $request){
         $user=$request->user();
-        $user->currentAccessToken()->delete();
+        $user->currentAccessToken()->delete;
         return $this->successResponse(new UserResource($user),'logout successfully',200);
     }
 }

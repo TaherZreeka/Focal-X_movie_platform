@@ -1,1 +1,0 @@
-<?php /**PATH C:\xampp\htdocs\Focal-X_movie_platform\resources\views/admin/layout/master.blade.php ENDPATH**/ ?>

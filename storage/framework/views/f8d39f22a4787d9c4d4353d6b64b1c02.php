@@ -20,7 +20,7 @@
     </section>
 
     <section class="content">
-        <form action="<?php echo e(route('movies.store')); ?>" method="POST" enctype="multipart/form-data">
+        <form action="<?php echo e(route('content_admin.movies.store')); ?>" method="POST" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
             <div class="row">
                 <div class="col-md-6">
@@ -141,7 +141,7 @@
             <!-- Buttons -->
             <div class="row">
                 <div class="col-12">
-                    <a href="<?php echo e(route('movies.index')); ?>" class="btn btn-secondary">Cancel</a>
+                    <a href="<?php echo e(route('content_admin.movies.index')); ?>" class="btn btn-secondary">Cancel</a>
                     <button type="submit" class="btn btn-success float-right">Create movies</button>
                 </div>
             </div>

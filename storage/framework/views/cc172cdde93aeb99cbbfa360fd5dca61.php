@@ -21,7 +21,7 @@
     </section>
 
     <section class="content">
-        <form method="POST" action="<?php echo e(route('movies.update', $movie->id)); ?>"  enctype="multipart/form-data">
+        <form method="POST" action="<?php echo e(route('content_admin.movies.update', $movie->id)); ?>"  enctype="multipart/form-data">
              
             <?php echo csrf_field(); ?>
             <?php echo method_field('PUT'); ?>
@@ -53,18 +53,18 @@
                             </div>
                              <div class="form-group">
                                 <label for="poster_url">poster</label>
-                                <input type="url" id="poster" name="poster_url"aaccept="image/*" class="form-control" value="<?php echo e(old('poster_url',$movie->poster_url)); ?>"
+                                <input type="url" id="poster" name="poster_url"accept="image/*" class="form-control" value="<?php echo e(old('poster_url',$movie->poster_url)); ?>"
                                     required>
                             </div>
                             <div class="form-group">
                                 <label for="trailer_url">trailer</label>
-                                <input type="url" id="trailer_url" name="trailer_url"aaccept="video/*" class="form-control" value="<?php echo e(old('trailer_url',$movie->trailer_url)); ?>"
+                                <input type="url" id="trailer_url" name="trailer_url"accept="video/*" class="form-control" value="<?php echo e(old('trailer_url',$movie->trailer_url)); ?>"
                                     required>
                             </div>
 
                             <div class="form-group">
                                 <label for="movie_url">movie</label>
-                                <input type="file" id="movie_url" name="movie_url"aaccept="video/*" class="form-control" value="<?php echo e(old('movie_url',$movie->movie_url)); ?>"
+                                <input type="file" id="movie_url" name="movie_url"accept="video/*" class="form-control" value="<?php echo e(old('movie_url',$movie->movie_url)); ?>"
                                     required>
                             </div>
                             <div class="form-group">
@@ -139,7 +139,7 @@
             <!-- Buttons -->
             <div class="row">
                 <div class="col-12">
-                    <a href="<?php echo e(route('movies.index')); ?>" class="btn btn-secondary">Cancel</a>
+                    <a href="<?php echo e(route('content_admin.movies.index')); ?>" class="btn btn-secondary">Cancel</a>
                     <button type="submit" class="btn btn-success float-right">save change</button>
                 </div>
             </div>

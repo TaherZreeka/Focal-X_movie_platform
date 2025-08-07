@@ -14,8 +14,9 @@ class MovieController extends Controller
 
    public function index()
 {
-    $movies = Movie::all();
-    return $this->successResponse(MovieResource::collection($movies),'all movies',200);
+     $movies = Movie::paginate(10); // ترجع 10 أفلام في كل صفحة
+    return response()->json($movies);
+
 }
 
 public function show(Movie $movie)

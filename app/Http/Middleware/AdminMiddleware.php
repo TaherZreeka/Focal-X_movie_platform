@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use app\Enums\UserRole;
+use App\Enums\UserRole;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,10 +17,14 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        
+
+       
+
+
         if (Auth::user()->role !== UserRole::Admin)
          {
-            abort(403, 'Unauthorized action (Admin only).'); 
+            abort(403, 'Unauthorized action (Admin only).');
+
         }
             return $next($request);
     }

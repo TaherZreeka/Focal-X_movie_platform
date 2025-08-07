@@ -73,13 +73,13 @@
                 <td><?php echo e($movie->language); ?></td>
                 <td><?php echo e($movie->genre); ?></td>
                 <td>
-                  <a class="btn btn-primary btn-sm" href="<?php echo e(route('movies.show', $movie->id)); ?>">
+                  <a class="btn btn-primary btn-sm" href="<?php echo e(route('content_admin.movies.show', $movie->id)); ?>">
                     <i class="fas fa-eye"></i> View
                   </a>
-                  <a class="btn btn-info btn-sm" href="<?php echo e(route('movies.edit', $movie->id)); ?>">
+                  <a class="btn btn-info btn-sm" href="<?php echo e(route('content_admin.movies.edit', $movie->id)); ?>">
                     <i class="fas fa-edit"></i> Edit
                   </a>
-                  <form action="<?php echo e(route('movies.destroy', $movie->id)); ?>" method="POST" style="display:inline-block;">
+                  <form action="<?php echo e(route('content_admin.movies.destroy', $movie->id)); ?>" method="POST" style="display:inline-block;">
                     <?php echo csrf_field(); ?>
                     <?php echo method_field('DELETE'); ?>
                     <button type="submit" onclick="return confirm('Are you sure you want to delete this movie?')" class="btn btn-danger btn-sm">

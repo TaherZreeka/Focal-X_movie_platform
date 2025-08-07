@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use App\Enums\ShowTypeEnum;
+use App\Models\Movie;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
 class Showtime extends Model
 {
+    use SoftDeletes;
      protected $fillable = [
         'id',
         'movie_id',

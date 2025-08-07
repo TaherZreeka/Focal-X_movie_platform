@@ -4,54 +4,56 @@
 
 @section('content')
 <div class="content-wrapper" dir="rtl">
-  <section class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6"><h1>إضافة مسؤول محتوى</h1></div>
+  <section class="content-header ">
+    <div class="container-fluid ">
+      <div class="row m-2">
+        <div class="col-sm-6"><h1>  Create Content Admin</h1></div>
         <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-left">
-            <li class="breadcrumb-item"><a href="/home">الرئيسية</a></li>
-            <li class="breadcrumb-item active">إضافة مسؤول محتوى</li>
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/home">Home</a></li>
+            <li class="breadcrumb-item active">Create Content Admin</li>
           </ol>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="content">
-    <div class="card card-primary">
-      <div class="card-header"><h3 class="card-title">بيانات مسؤول المحتوى الجديد</h3></div>
+  <section class="content mx-3">
+    <div class="card p-0 position-relative mt-n4 mx-3 z-index-2">
+      <div class="w-100 bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex justify-content-center align-items-center" style="height: 100px;">
+        <h3 class="text-white text-capitalize m-0"style="font-size: 32px;">New content admin details</h3>
+    </div>
       <form action="{{ route('admin.content.store') }}" method="POST">
         @csrf
         <div class="card-body">
           <div class="form-group">
-            <label for="name">الاسم</label>
+            <label for="name">Name</label>
             <input type="text" name="name" class="form-control" required>
           </div>
 
           <div class="form-group">
-            <label for="email">البريد الإلكتروني</label>
+            <label for="email"> Email</label>
             <input type="email" name="email" class="form-control" required>
           </div>
 
           <div class="form-group">
-            <label for="password">كلمة المرور</label>
+            <label for="password">Password </label>
             <input type="password" name="password" class="form-control" required>
           </div>
 
           <div class="form-group">
-            <label for="role">الدور</label>
+            <label for="role">Role</label>
             <select name="role" class="form-control">
-              <option value="user">مستخدم</option>
-              <option value="content">مسؤول محتوى</option>
-              
+              <option value="user">User</option>
+              <option value="content"> Content Admin</option>
+
             </select>
           </div>
         </div>
 
         <div class="card-footer text-left">
           <button type="submit" class="btn btn-success">
-            <i class="fas fa-save"></i> حفظ
+            <i class="fas fa-save"></i> Save
           </button>
         </div>
       </form>

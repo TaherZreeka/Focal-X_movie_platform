@@ -75,13 +75,13 @@
                 <td>{{ $movie->language }}</td>
                 <td>{{ $movie->genre }}</td>
                 <td>
-                  <a class="btn btn-primary btn-sm" href="{{ route('movies.show', $movie->id) }}">
+                  <a class="btn btn-primary btn-sm" href="{{ route('content_admin.movies.show', $movie->id) }}">
                     <i class="fas fa-eye"></i> View
                   </a>
-                  <a class="btn btn-info btn-sm" href="{{ route('movies.edit', $movie->id) }}">
+                  <a class="btn btn-info btn-sm" href="{{ route('content_admin.movies.edit', $movie->id) }}">
                     <i class="fas fa-edit"></i> Edit
                   </a>
-                  <form action="{{ route('movies.destroy', $movie->id) }}" method="POST" style="display:inline-block;">
+                  <form action="{{ route('content_admin.movies.destroy', $movie->id) }}" method="POST" style="display:inline-block;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" onclick="return confirm('Are you sure you want to delete this movie?')" class="btn btn-danger btn-sm">
