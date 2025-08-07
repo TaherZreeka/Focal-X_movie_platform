@@ -87,7 +87,3 @@ Route::name('content-manager.')->prefix('content_admin')->middleware(['auth', 'r
 Route::middleware(['auth'])->group(function () {
     Route::resource('showtimes', App\Http\Controllers\ShowtimeController::class);
 });
-
-
-
-

@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="ar">
-@include('admin.layout.header')
+<?php echo $__env->make('admin.layout.header', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <!-- wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
-        @include('admin.layout.navbar')
+        <?php echo $__env->make('admin.layout.navbar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
         <!-- /.navbar -->
         <!-- sidebar -->
-        @include('admin.layout.sidebar')
+        <?php echo $__env->make('admin.layout.sidebar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
         <!-- /.sidebar -->
         <!-- content -->
-        @yield('content')
+        <?php echo $__env->yieldContent('content'); ?>
         <!-- /.content -->
         <!-- footer -->
-        @include('admin.layout.footer')
+        <?php echo $__env->make('admin.layout.footer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
         <!-- /.footer -->
     </div>
     <!-- ./wrapper -->
 
     <!-- jQuery -->
 
-    <!-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) -->
-    @vite(['resources/js/app.js'])
+    <!-- <?php echo app('Illuminate\Foundation\Vite')(['resources/sass/app.scss', 'resources/js/app.js']); ?> -->
+    <?php echo app('Illuminate\Foundation\Vite')(['resources/js/app.js']); ?>
 
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
@@ -64,4 +64,4 @@
     <!-- ./jQuery -->
 </body>
 
-</html>
+</html><?php /**PATH C:\xampp\htdocs\focal x\Focal_X-Graduation-Project\Movie_Platform_Management_System\resources\views/admin/layout/master.blade.php ENDPATH**/ ?>

@@ -88,7 +88,7 @@ class MovieController extends Controller
             ->with('success', 'تم تحديث الفيلم بنجاح');
     }
 
-    
+
 
     /**
      * Remove the specified resource from storage.
@@ -101,7 +101,7 @@ class MovieController extends Controller
         $movie->reviews()->delete();
         $movie->delete();
 
-        return redirect()->route('content_admin.movies.index')
+        return redirect()->route('')
             ->with('success', 'تم حذف الفيلم بنجاح');
     }
 }
