@@ -8,7 +8,7 @@
 
 <div align="center">
 
-![Presented by](screenshot/focal_x.png)  
+![Presented by](screenshot/focal%20x.png)  
 
 </div>
 
@@ -258,7 +258,7 @@ If you find bugs, need help, or would like to contribute:
 
 ### 🎉 Special Thanks
 
-**Focal X Agent**  
+**Focal X  Agency**  
 For their commitment to student growth and learning opportunities.
 
 **Mentors**  
