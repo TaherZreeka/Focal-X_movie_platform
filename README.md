@@ -1,4 +1,3 @@
-+origin/main
 
 > An integrated movie platform management system that allows users to browse movies, rate them, and write reviews, with an admin dashboard for administrators and content managers.
 
