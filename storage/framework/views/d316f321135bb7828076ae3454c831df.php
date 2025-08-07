@@ -19,4 +19,4 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 </head>
-<?php /**PATH D:\rag\focla-x\Focal-X_movie_platform\resources\views/content_admin/layout/header.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\focal x\Focal_X-Graduation-Project\Movie_Platform_Management_System\resources\views/content_admin/layout/header.blade.php ENDPATH**/ ?>

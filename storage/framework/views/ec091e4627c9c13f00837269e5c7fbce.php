@@ -74,4 +74,4 @@
 </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('content_admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\rag\focla-x\Focal-X_movie_platform\resources\views/admin/content/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layout.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/admin/content/index.blade.php ENDPATH**/ ?>

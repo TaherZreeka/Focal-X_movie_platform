@@ -206,4 +206,4 @@
     </div>
     <!-- /.sidebar -->
 </aside>
-<?php /**PATH D:\rag\focla-x\Focal-X_movie_platform\resources\views/content_admin/layout/sidebar.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\focal x\Focal_X-Graduation-Project\Movie_Platform_Management_System\resources\views/content_admin/layout/sidebar.blade.php ENDPATH**/ ?>

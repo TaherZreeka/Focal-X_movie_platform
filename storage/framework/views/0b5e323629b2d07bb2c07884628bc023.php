@@ -5,4 +5,4 @@
         <b>Version</b> 3.0.0-rc.1
     </div>
 </footer>
-</footer><?php /**PATH D:\rag\focla-x\Focal-X_movie_platform\resources\views/content_admin/layout/footer.blade.php ENDPATH**/ ?>
+</footer><?php /**PATH C:\xampp\htdocs\focal x\Focal_X-Graduation-Project\Movie_Platform_Management_System\resources\views/content_admin/layout/footer.blade.php ENDPATH**/ ?>

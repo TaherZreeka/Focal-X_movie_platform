@@ -51,18 +51,7 @@
 
                 </a>
 
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault();
-                                          document.getElementById('logout-form').submit();">
-                        <?php echo e(__('Logout')); ?>
-
-                    </a>
-
-                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" class="d-none">
-                        <?php echo csrf_field(); ?>
-                    </form>
-                </div>
-            </li>
+                
             <?php endif; ?>
         </ul>
 
@@ -75,4 +64,5 @@
         </li>
     </ul>
 </nav>
-<!-- /.navbar --><?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/admin/layout/navbar.blade.php ENDPATH**/ ?>
+<!-- /.navbar -->
+<?php /**PATH C:\xampp\htdocs\training XFocal\Focal-X_movie_platform\resources\views/admin/layout/navbar.blade.php ENDPATH**/ ?>
