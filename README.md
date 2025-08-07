@@ -8,7 +8,7 @@
 
 <div align="center">
 
-![Presented by](screenshot/Focal%20X%20.png)  
+![Presented by](screenshot/focal_x.png)  
 
 </div>
 
@@ -280,7 +280,7 @@ For their commitment to student growth and learning opportunities.
 | Role               | Name                      |
 |--------------------|---------------------------|
 | Lead Developer     | Taher Saleh Zreeka        |
-| Vice Lead          | Noor Suhail Al-Kanj       |
+| Vice Lead          | Nour Sohil Alkinj       |
 | Frontend Specialist| Raghad Omar Shawish       |
 | Backend Developer  | Khalid Ayman Thakrallah   |
 | Database Specialist| Ibrahim Sarour            |
@@ -289,4 +289,4 @@ For their commitment to student growth and learning opportunities.
 
 **Thank you to all educators, mentors, and contributors who made this project a reality.**
 
-</div>
+</div> 
