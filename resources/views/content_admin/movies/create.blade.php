@@ -54,19 +54,19 @@
                             </div>
                             <div class="form-group">
                                 <label for="poster_url">poster</label>
-                                <input type="url" id="poster" name="poster_url" aaccept="image/*" class="form-control"
+                                <input type="url" id="poster" name="poster_url" accept="image/*" class="form-control"
                                     value="{{ old('poster_url') }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="trailer_url">trailer</label>
-                                <input type="url" id="trailer_url" name="trailer_url" aaccept="video/*"
+                                <input type="url" id="trailer_url" name="trailer_url" accept="video/*"
                                     class="form-control" value="{{ old('trailer_url') }}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="movie_url">movie</label>
-                                <input type="file" id="movie_url" name="movie_url" aaccept="video/*"
-                                    class="form-control" value="{{ old('movie_url') }}" required>
+                                <input type="file" id="movie_url" name="movie_url" accept="video/*" class="form-control"
+                                    value="{{ old('movie_url') }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="year">year</label>

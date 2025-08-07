@@ -17,12 +17,17 @@ class Movie extends Model
             'description',
             'trailer_url',
             'age_rating',
+            'movie_url',
     ];
 
-    public function genre()
+    public function genres()
     {
         return $this->belongsTo(Genre::class);
     }
+    /* public function shows()
+    {
+        return $this->hasMany(Show::class);
+    }*/
     public function reviews()
     {
         return $this->hasMany(Review::class);
@@ -30,7 +35,9 @@ class Movie extends Model
      public function showtimes()
     {
         return $this->hasMany(Showtime::class);
+
     }
+
     
     public function ratings()
      {

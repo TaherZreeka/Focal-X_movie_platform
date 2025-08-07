@@ -41,8 +41,8 @@
                         <tr>
                             <th>No</th>
                             <th>title</th>
-                            <th>duration</th>
-                            <th>description</th>
+                            <th class="text-center" style="width: 80px;">duration</th>
+                            <th class="text-center">description</th>
                             <th>poster</th>
                             <th>trailer</th>
                             <th>movie</th>
@@ -56,14 +56,27 @@
                         <tr>
                             <td>1</td>
                             <td>{{ $movie->title }}</td>
-                            <td>{{ $movie->duration }}</td>
-                            <td>{{ $movie->description }}</td>
-                            <td>{{ $movie->poster_url }}</td>
-                            <td>{{ $movie->trailer_url }}</td>
+                            <td class="text-nowrap">{{ $movie->duration }}</td>
+                            <td>{{ Str::limit($movie->description, 40) }}</td>
+                            <td>
+                                <img src="{{ $movie->poster_url }}" alt="poster" width="50" height="70"
+                                    style="object-fit: cover;">
+                            </td>
+                            <td>
+                                <a href="{{ $movie->trailer_url }}" target="_blank"
+                                    class="btn btn-sm btn-outline-primary">Trailer</a>
+                            </td>
                             <td>{{ $movie->movie_url }}</td>
                             <td>{{ $movie->year }}</td>
                             <td>{{ $movie->language }}</td>
-                            <td>{{ $movie->genre }}</td>
+                            <td>
+                                @if($movie->genres)
+                                @foreach($movie->genres as $genre)
+                                <span class="badge badge-info">{{ $genre->name }}</span>
+                                @endforeach
+                                @else
+                                <span class="text-muted">No genres</span>
+                                @endif
                         </tr>
                     </tbody>
                 </table>

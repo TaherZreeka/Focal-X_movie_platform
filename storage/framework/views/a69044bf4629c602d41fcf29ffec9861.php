@@ -3,14 +3,14 @@
 <?php $__env->startSection('content'); ?>
 
 <div class="content-wrapper" dir="ltr">
-    <section class="content-header">
-        <div class="container-fluid mx-3">
-            <div class="row mb-2">
+    <section class="content-header d-flex justify-content-between align-items-center">
+        <div class="container-fluid flex mx-5">
+            <div class="row mb-3">
                 <div class="col-sm-6">
-                    <h1>Add Showtime</h1>
+                    <h1 style="text-align: left;">Add Showtime</h1>
                 </div>
                 <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
+                    <ol class="breadcrumb float-sm-left"style="text-align: right;">
                         <li class="breadcrumb-item"><a href="/home">Home</a></li>
                         <li class="breadcrumb-item active">Add Showtime</li>
                     </ol>

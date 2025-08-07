@@ -4,13 +4,21 @@ namespace App\Http\Controllers\Admin;
 use App\Models\User;
 use App\Models\Movie;
 use App\Http\Controllers\Controller;
-
+use App\Models\Review;
 
 class AdminController extends Controller
 {
-    
+     public function home()
+    {
+        $userCount = User::count();
+        $movieCount = Movie::count();
+        $reviewCount = Review::count();
+         $latestReview = Review::latest()->with(['user', 'movie'])->first();
+          $latestMovie = Movie::latest()->first();
+        return view('content_admin.dashboard', compact('userCount', 'movieCount','reviewCount','latestReview','latestMovie'));
+    }
 
- 
+
      //  عرض تقرير الأفلام الأعلى مشاهدة أو الأعلى تقييماً
      public function reports()
     {

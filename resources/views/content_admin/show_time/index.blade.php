@@ -17,6 +17,12 @@
          <a href="{{ route('showtimes.create') }}" class="btn btn-danger mb-3" data-toggle="tooltip" data-original-title="Edit movie">
                       <i class="fa-solid fa-plus"></i>    create
                         </a>
+                          <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-left">
+            <li class="breadcrumb-item"><a href="/home">Home</a></li>
+            <li class="breadcrumb-item active">showtimes </li>
+          </ol>
+        </div>
         </div>
         <div>
       <div class="card">

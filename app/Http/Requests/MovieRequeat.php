@@ -24,12 +24,13 @@ class MovieRequeat extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'duration' => 'required|integer|min:1',
-            'poster' => 'required_if:is_new,true|image|mimes:jpeg,png,jpg|max:2048',
+            'poster_url' => 'required_if:is_new,true|image|mimes:jpeg,png,jpg|max:2048',
             'description' => 'required|string|max:1000',
             'year' => 'required|integer|min:1900|max:' . date('Y'),
-            'trailer_url' => 'required|url',
+            'trailer_url' => 'nullable|file|mimes:mp4,mov,avi,mkv,webm|max:200000',
             'age_rating' => 'required|string|in:G,PG,PG-13,R,NC-17',
             'language' => 'required|string',
+            'movie_url'=>'requiired|file|mimes:mp4,mov,avi,mkv,webm|max:200000',
             'genres' => 'required|array|min:1',
             'genres.*' => 'exists:genres,id'
         ];
@@ -38,7 +39,7 @@ class MovieRequeat extends FormRequest
     public function messages()
     {
         return [
-            'poster.required_if' => 'حقل البوستر مطلوب عند إضافة فيلم جديد',
+            'poster_url.required_if' => 'حقل البوستر مطلوب عند إضافة فيلم جديد',
             'genres.required' => 'يجب اختيار نوع واحد على الأقل',
             'age_rating.in' => 'التصنيف العمري غير صحيح'
         ];

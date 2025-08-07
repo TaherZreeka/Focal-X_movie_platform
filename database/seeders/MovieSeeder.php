@@ -60,6 +60,7 @@ class MovieSeeder extends Seeder
                 'genre_id' => 4,
                 'year' => 2001,
                 'duration' => 125,
+                
                 'language' => 'Japanese',
                 'poster_url' => 'https://image.tmdb.org/t/p/original/dL11DBPcRhWWnJcFXl9A07MrqTI.jpg',
                 'description' => 'A fantasy adventure through a magical world.',

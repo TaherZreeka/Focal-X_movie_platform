@@ -9,8 +9,18 @@
 
 
     .nav-item .nav-link {
-        padding-right: 0px;
+        padding-left: 0px;
+        padding-right: 15px;
+        margin-top: 15px padding-right: 0px;
         padding-left: 15px;
+
+    }
+
+    .nav-sidebar {
+
+
+        direction: ltr;
+        text-align: left;
     }
 
     .logout-button {
@@ -26,6 +36,29 @@
         border-radius: 10px;
         overflow: hidden;
     }
+
+    .logout-button a {
+        color: white;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .logout-button {
+        position: absolute;
+        bottom: 10px;
+        /* بدلًا من 0 حتى لا يلتصق تمامًا */
+        left: 0;
+        right: 0;
+        width: calc(100% - 20px);
+        /* يعطي مساحة padding تلقائية */
+        margin: 0 auto;
+        background-color: #a00;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
 
     .logout-button a {
         color: white;
@@ -54,6 +87,7 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
+
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
@@ -123,7 +157,7 @@
 
                 <!-- Movie Reports -->
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link <?php echo e(request()->is('admin/reports*') ? 'active' : ''); ?>">
+                    <a href="#" class="nav-link <?php echo e(request()->is('reviews*') ? 'active' : ''); ?>">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             Movie Reports
@@ -132,9 +166,9 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/reports" class="nav-link">
+                            <a href="<?php echo e(route('reviews.index')); ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Reports</p>
+                                <p>Reviews</p>
                             </a>
                         </li>
                     </ul>

@@ -25,7 +25,7 @@
             <!-- /.control-sidebar -->
         </div>
         <!-- ./wrapper -->
-        
+
 
         <!-- jQuery -->
 
@@ -70,4 +70,3 @@
 
     </body>
 </html>
-    
