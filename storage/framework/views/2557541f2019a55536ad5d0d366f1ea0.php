@@ -1,119 +1,42 @@
 <!-- Main Sidebar Container -->
-<style>
-    .sidebar,
-    .main-sidebar {
-        width: 285px;
-        /* overflow-x: hidden; */
-        /* position: fixed; */
-    }
-
-
-    .nav-item .nav-link {
-        padding-left:0px;
-        padding-right: 15px;
-        margin-top: 15px
-        padding-right: 0px;
-        padding-left: 15px;
-
-    }
-.nav-sidebar {
-
-
-  direction: ltr;
-  text-align: left;
-}
-  .logout-button {
-  position: absolute;
-  bottom: 10px; /* بدلًا من 0 حتى لا يلتصق تمامًا */
-  left: 0;
-  right: 0;
-  width: calc(100% - 20px); /* يعطي مساحة padding تلقائية */
-  margin: 0 auto;
-  background-color: #a00;
-  border-radius: 10px;
-  overflow: hidden;
-}
-  .logout-button a {
-    color: white;
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-  }
-
-    .logout-button {
-        position: absolute;
-        bottom: 10px;
-        /* بدلًا من 0 حتى لا يلتصق تمامًا */
-        left: 0;
-        right: 0;
-        width: calc(100% - 20px);
-        /* يعطي مساحة padding تلقائية */
-        margin: 0 auto;
-        background-color: #a00;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-
-    .logout-button a {
-        color: white;
-        padding: 10px 15px;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .logout-button i {
-        margin-left: 10px;
-    }
-
-    a i {
-        font-size: 20px;
-        color: white;
-    }
-</style>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('home') }}" class="brand-link d-flex align-items-center">
-        <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
-            class="brand-image img-circle elevation-3" style="opacity: .8; width: 35px; height: 35px;">
-        <span class="brand-text font-weight-light ml-2">Content Admin</span>
+    <a href="index3.html" class="brand-link">
+        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
+        <span class="brand-text font-weight-light">Content Admin</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block"> {{ Auth::user()->name }}</a>
+                <a href="#" class="d-block">Focal X</a>
             </div>
         </div>
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                   with font-awesome or any other icon font library -->
-                      <li class="nav-item has-treeview">
-                  <a href="{{ route('home') }}" class="nav-link {{ request()->is('home') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-
-              </p>
-            </a></li>
+                <a href="/home" class="nav-link active">
+                    <p>
+                        Dashboard
+                    </p>
+                </a>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             User Management
-                            <i class="fas fa-angle-right right"></i>
+
+
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -136,13 +59,13 @@
 
 
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link {{ request()->is('admin/content-managers*') ? 'active' : '' }}">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             Content Admin Management
 
 
-                            <i class="fas fa-angle-right right"></i>
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -160,17 +83,21 @@
                         </li>
                     </ul>
                 </li>
+
+
+
+
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link {{ request()->is('showtimes*') ? 'active' : '' }}">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             ShowTimes
-                            <i class="fas fa-angle-right right"></i>
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/showtimes" class="nav-link{{ request()->routeIs('index') ? 'active' : '' }}">
+                            <a href="/showtimes" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>index</p>
                             </a>
@@ -184,11 +111,11 @@
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link {{ request()->is('admin/Movies*') ? 'active' : '' }}">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             Movies
-                            <i class="fas fa-angle-right right"></i>
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -200,24 +127,20 @@
                         </li>
                         <li class="nav-item">
                             <a href="/movies/create" class="nav-link">
-                        <li class="nav-item">
-                            <a href="/movies/create" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Movie Add</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-
-
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link {{ request()->is('admin/reports*') ? 'active' : '' }}">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
                             Movie Reports
 
 
-                            <i class="fas fa-angle-right right"></i>
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -230,43 +153,9 @@
 
                     </ul>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link {{ request()->is('reviews*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-book"></i>
-                        <p>
-                            Movie reviews
-
-
-                            <i class="fas fa-angle-right right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('reviews.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Reviews</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
             </ul>
-
         </nav>
         <!-- /.sidebar-menu -->
-        <div class="logout-button nav-sidebar flex-column">
-            <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
-                                          document.getElementById('logout-form').submit();">
-
-                <i class="fas fa-sign-out-alt nav-icon "></i>
-                <p class="mb-0" style="font-size:20px;color:white;"> logout</p>
-            </a>
-
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                @csrf
-            </form>
-        </div>
     </div>
     <!-- /.sidebar -->
-</aside>
+</aside><?php /**PATH C:\mo\Focal-X_movie_platform\resources\views/content_admin/layout/sidebar.blade.php ENDPATH**/ ?>

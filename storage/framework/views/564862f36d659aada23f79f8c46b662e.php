@@ -62,7 +62,7 @@
               <div class="icon">
                 <i class="ion ion-film-marker"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?php echo e(route('movies.index')); ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
            <div class="col-lg-3 col-6">
@@ -76,7 +76,7 @@
               <div class="icon">
                 <i class="ion ion-star"></i>
               </div>
-              <a href="#" class="small-box-footer">More info
+              <a href="<?php echo e(route('reviews.index')); ?>" class="small-box-footer">More info
                  <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>

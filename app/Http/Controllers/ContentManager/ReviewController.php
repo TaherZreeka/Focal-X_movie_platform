@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\ContentManager;
+use App\Http\Controllers\Controller;
 use App\Models\Review;
 use Illuminate\Http\Request;
 
@@ -13,7 +13,7 @@ class ReviewController extends Controller
     }
     public function approve(Review $review){
         $review->update(['approved'=>true]);
-        return back()->with('success','تمت الموافقة على التقيم');
+        return back()->with('success','Evaluation approved');
     }
 
 
@@ -21,13 +21,13 @@ class ReviewController extends Controller
     public function reject(Review $review)
     {
         $review->update(['approved' => false]);
-        return back()->with('success', 'تم رفض التقييم');
+        return back()->with('success', 'Rating rejected');
     }
 
     public function destroy(Review $review)
     {
         $review->delete();
-        return redirect()->route('content_admin.reviews.index')
-            ->with('success', 'تم حذف التقييم بنجاح');
+        return redirect()->route('reviews.index')
+            ->with('success', 'The rating has been successfully deleted.');
     }
 }
